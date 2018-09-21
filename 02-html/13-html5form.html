@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 form</title>
+</head>
+<body>
+
+<form action="#" method="post">
+	<fieldset>
+		<legend>html5 form</legend>
+
+		<p>
+			<label for="username">이름</label>
+			<input type="text" id="username" name="username" value="">
+		</p>
+
+		<p>
+			<!-- 이메일 문법 검증을 자동적으로 해 줄 수 있다. 
+				만약 html5 를 지원하지 않는 브라우저가 있다면 text 타입으로 들어간 것처럼 진행된다.-->
+			<label for="useremail">이메일</label>
+			<input type="email" name="useremail" id="useremail" value="">
+		</p>
+
+		<p>
+			<!-- url 검증 -->
+			<label for="userurl">웹사이트</label>
+			<input type="url" name="userurl" id="userurl" value="">
+		</p>
+
+		<p>
+			<!-- 숫자만 보여준다(화살표 위아래로!)
+				 min, max 로 최대, 최소 숫자를 지정할 수 있다.
+				 value 에 초기값을 넣을 수도 있다. -->
+			<label for="order">주문수량</label>
+			<input type="number" name="order" id="order" min="1" max="20" value="1">
+			<span>개</span>img
+		</p>
+
+		<p>
+			<!-- 바를 만들 수 있다. 
+				min, max 로 최대 최소를 정할 수 있고
+				step 으로 한번에 움직이는 크기를 지정할 수 있다.-->
+			<label for="userrange">길이</label>
+			<input type="range" name="userrange" id="userrange" min="0" max="100" step="10" value="30">
+		</p>
+
+		<p>
+			<!-- 아직 지원이 다 되지 않기때문에 피하는 것이 좋다. 차라리 프레임워크 기능을 활용하자 (사파리에서도 안됨...) 
+				min max 로 최대 최소 선택 날짜를 지정할 수도 있다.-->
+			<label for="userdate">제출일</label>
+			<input type="date" name="userdate" id="userdate" min="2017-09-10" max="2017-10-15" value="2017-10-10">
+		</p>
+
+		<p>
+			<!-- 색상을 선택하는 기능을 추가할 수 있다. -->
+			<label for="usercolor">색상선택</label>
+			<input type="color" name="usercolor" id="usercolor" value="#ff0000">
+		</p>
+
+		<p>
+			<!-- 연락처 검증(이 때 모바일 화면인 경우 자판이 달라지게 만들 수 있으므로 유용하다.) -->
+			<label for="usertel">연락처</label>
+			<input type="tel" name="usertel" id="usertel" value="" placeholder="01012345678">
+		</p>
+
+		<p>
+			<!-- disabled: 비활성화 시킨다.  
+				novalidate: 문법검증을 하지 않는다.
+				placeholder: placeholder 를 적용한다.
+				autofocus: 커서를 바로 적용시킬 수 있다. 
+				required: 필수 입력 항목을 만들 수 있다.
+				autocomplete: 자동완성(디폴트가 on 이므로 끄고 싶다면 off 를 지정한다.)
+				 -->
+			<label for="userdis">diaabled</label>
+			<input type="text" name="userdis" id="userdis" disabled="disabled">
+		</p>
+	</fieldset>
+	<input type="submit" value="Send">
+</form>
+	
+</body>
+</html>

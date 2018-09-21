@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>position, center</title>
+	<style type="text/css">
+	.content {
+		position: absolute;
+		/* 만약 크기가 존재하지 않는다면 아래위 / 왼쪽 오른족에 같은 크기를 주면 가운데 정렬로 간다.
+			- 다만 글이 많아지면 box 를 넘어가기도 한다.
+			- 모바일 작업에서 디바이스의 크기가 다르므로 팝업을 띄울때 자주 사용된다. */
+		left: 100px;
+		right: 100px;
+		top: 100px;
+		bottom: 100px;
+		background-color: lime;
+	}
+	.content .inn {
+		padding: 20px;
+	}
+	</style>
+</head>
+<body>
+
+<div class="content">
+	<div class="inn">
+		<h1>content title</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet repellendus impedit mollitia porro at aliquid sint distinctio totam quis repellat beatae itaque suscipit et reprehenderit magni cupiditate earum cumque, voluptatem, blanditiis optio quidem! Dolor laudantium qui ab, aspernatur delectus quia iure suscipit. Aut fugiat, dignissimos debitis et ab, est tempora accusamus culpa ea ducimus, qui unde animi asperiores. Provident assumenda aliquid doloribus tenetur animi odio, nemo porro dolorem dicta hic atque voluptate possimus explicabo odit, architecto facilis libero cupiditate dolore accusamus inventore ipsam quia enim, officia! Reiciendis adipisci soluta aliquam voluptas nostrum ut in nisi mollitia obcaecati, ab expedita consequatur.</p>
+	</div>
+</div>
+	
+</body>
+</html>	

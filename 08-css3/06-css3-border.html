@@ -1,0 +1,40 @@
+<!-- 코너를 둥글게 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>border-radius</title>
+	<style>
+	body {
+		font: 12px 'Malgun Gothic',sans-serif;
+	}
+	.box {
+		width: 400px;
+		height: 400px;
+		border: 3px solid black;
+		/* 아래 두가지는 동일한 형태이다.
+			border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+			border-radius: 10px;
+			- 가로방향 네개 / 세로방향 으로 시계방향으로 네개 의 순서로 들어간다.
+		*/
+
+		/* 50% 혹은 반의 값을 주면 원이 된다.*/
+		/*border-radius: 50%*/
+
+		/* 아래처럼 주면 찌그러진 원(50%-가로방향, 100%-세로방향)이 된다. */
+		/*border-radius: 50% 100%*/
+		
+		/* 시계방향으로 각각 값을 줄 수 있다. */
+		border-radius: 50px 0 50px 0;
+	}	
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="box">
+			
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- 그림자처리, 말줄임표현, 투명도 지정하기 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>shadow</title>
+	<style>
+	/* css3 를 적용할 때 특정 브라우저에 적용하기 위한 접두어를 붙여야 할 때가 있다. (최신 브라우저는 적용되어 있는 경우가 많다.)
+		selector {
+			-webkit-attribute: value; 	Chrome, Safari
+			-moz-attribute: value;		Firefox
+			-ms-attribute: value;		IE, Outlook
+			-o-attribute: value;		Opera (요즘에는 크롬 브라우저를 지원하기도 한다.)
+			attribute: value; 			표준 속성
+		}
+
+	참고> css3 Generator 사이트에서 확인할 수 있다.
+	*/
+	#wrap {
+		width: 600px;
+		margin: 0 auto;
+	}
+	#wrap h1 {
+		border: 1px solid #333;
+		padding: .5em;
+		font: bold 100px arial,sans-serif;
+		text-transform: uppercase;
+		/* 글자 그림자 처리 
+			- "가로방향 | 세로방향 | 번지는 정도(blur) | 색깔" 순서로 지정한다.*/
+		/* 참고로 css3 는 쉼표를 통해서 두번 적용시킬 수 있다. (단 나중의 것이 나중에 나온다는 것 참고) */
+		text-shadow: 
+			2px 2px 0 rgba(255,255,255,1),
+			-20px 10px 10px rgba(0,0,0,.6);
+
+		/* box-shadow 는 webkit 에 적용해야 한다. */
+		/*-webkit-box-shadow: ;*/
+
+		/* box 그림자 처리
+			- inset(안쪽그림자)/outset(바깥쪽그림자) - option | 가로 | 세로 | 번짐정도 | spread - option | 색 */
+		box-shadow:
+			10px 10px 20px rgba(0,0,0,.5),
+			inset 5px 5px 30px 10px rgba(255,0,0,.5);
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>shadow</h1>
+	</div>
+</body>
+</html>

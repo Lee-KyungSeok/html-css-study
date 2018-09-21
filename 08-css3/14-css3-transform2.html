@@ -1,0 +1,96 @@
+<!-- 6면체 만들어보기 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>transform</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html,body {
+		width: 100%;
+		height: 100%;
+	}
+	body {
+		perspective: 1000px;
+		font: 12px 'Malgun Gothic',sans-serif;
+	}
+	.cube {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -100px 0 0 -100px;
+		width: 200px;
+		height: 200px;
+		/* 이를 설정하지 않으면 회전할 때 2d 로 된 후 진행된다. 따라서 입체를 유지하도록 설정할 수 있다. */
+		transform-style: preserve-3d;
+		animation: cube 3s infinite linear;
+	}
+	.cube:hover {
+		animation-play-state: paused;
+	}
+	.box {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 200px;
+		height: 200px;
+		color: #fff;
+		font: bold 100px 'Trebuchet MS',sans-serif;
+		text-align: center;
+		opacity: .6;
+	}
+	#a {
+		/* 앞으로 꺼낸다. */
+		transform: translateZ(100px);
+		z-index: 1;
+		background-color: #ff0000;
+	}
+	#b {
+		/* 오른쪽으로 보내고 90도를 돌린다. */
+		transform: translateX(100px) rotateY(90deg);
+		background-color: #810073;
+	}
+	#c {
+		/* 뒤로 보내고 Y 축으로 180 도 회전 시키면 뒤집어진 상태로 만들 수 있다. */
+		transform: translateZ(-100px) rotateY(180deg);
+		background-color: #340081;
+	}
+	#d {
+		/* 왼쪽으로 보내고 270도 회전 */
+		transform: translateX(-100px) rotateY(270deg);
+		background-color: #004981;
+	}
+	#e {
+		/* 위로 보내고 x축 방향으로 회전 */
+		transform: translateY(-100px) rotateX(90deg);
+		background-color: #00714d;
+	}
+	#f {
+		/* 아래로 보내고 x축 방향으로 회전 */
+		transform: translateY(100px) rotateX(270deg);
+		background-color: #0d7100;
+	}
+	@keyframes cube {
+		0%{
+			transform: rotate3d(1,1,1,0deg);
+		}
+		100% {
+			transform: rotate3d(1,1,1,360deg);
+		}
+	}
+	</style>
+</head>
+<body>
+	<div class="cube">
+		<div class="box" id="a">A</div>
+		<div class="box" id="b">B</div>
+		<div class="box" id="c">C</div>
+		<div class="box" id="d">D</div>
+		<div class="box" id="e">E</div>
+		<div class="box" id="f">F</div>
+	</div>
+</body>
+</html>

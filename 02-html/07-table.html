@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+</head>
+<body>
+
+<!-- thead, tfoot 만은 불가능하지만 tbody 만 있을 경우는 이 태그는 안달아도 된다. -->
+<!-- border 같이 스타일을 표현하는 것은 css 에서 하는 것이 좋다. -->
+<table border width="100%">
+	<caption>table caption</caption> <!-- 표애 짧은 설명을 단다. -->
+	<colgroup>
+		<col width="200"> <!-- 200 으로 고정시킬수 있다. -->
+		<col width="200">
+		<col width="200">
+		<col> <!-- 마지막은 값을 주지 않아야 크기가 맞을 수 있다. (이렇게 안주는 것이 좋을 수 있다, 25% 씩 지정하더라도 마지막은 비워두자)-->
+	</colgroup>
+	<thead> <!-- 표의 제목을 표시한다. -->
+		<tr> <!-- 각 행을 구분 -->
+			<!-- th tag: 각각의 cell 의 제목을 표시한다
+				scope 속성은 반드시 달아주도록 한다.  
+				scope=col | row | colgroup | rowgroup 가 존재-->
+			<th scope="col">table header cell</th> 
+			<th scope="col">table header cell</th>
+			<th scope="col">table header cell</th>
+			<th scope="col">table header cell</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<!-- rowspan 을 사용하면 row 여러개를 합칠 수 있다. 따라서 두번째 tr 태그 안에는 세개만 써주었다. -->
+			<td rowspan="3">cell1</td> <!-- table data cell 로 내용을 표시한다. -->
+			<td>cell1</td>
+			<td>cell1</td>
+			<td>cell1</td>
+		</tr>
+		<tr>
+			<td>cell2</td>
+			<td>cell3</td>
+			<td>cell4</td>
+		</tr>
+		<tr>
+			<td>cell2</td>
+			<td>cell3</td>
+			<td>cell4</td>
+		</tr>
+	</tbody>
+	<tfoot> <!-- 결과를 표현하는 부분(엑셀의 결과부분? 이라고 생각하면 편할 듯) -->
+		<tr>
+			<th scope="row">result</th> 
+			<td colspan="3">...</td>  <!-- colspan 을 사용하면 column 여러개를 합칠 수 있다. -->
+			<!-- <td>...</td> 
+			<td>...</td> --> 
+		</tr>
+	</tfoot>
+</table>
+
+</body>
+</html>

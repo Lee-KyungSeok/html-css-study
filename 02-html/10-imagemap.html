@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>image map</title>
+</head>
+<body>
+
+<h1>이미지맵</h1>
+
+<!-- 하나의 이미지에 여러개가 있을 경우 각각에 따라서 이미지를 옮길 수 있다. (좌표를 구해서 설정해야 한다.) 
+	shape 로 어떻게 영역을 설정한지 결정
+	cords 로 좌표를 지정
+	href 로 이동할 링크
+	alt 로 설명을 적는다 -->
+<p>
+	<img src="img/sample.png" usemap="#map" alt=""> <!-- name 과 id 와 동일한 이름으로 # 을 적어서 usemap 에 적용한다. -->
+	<map name="map" id="map"> <!-- name 과 id 둘 다 지정해 주는 것이 좋다. -->
+		<area shape="rect" coords="15,25,218,84" href="http://naver.com/" alt="네이버로 이동"> <!-- x, y 좌표를 지정 -->
+		<area shape="circle" coords="308,55,50" href="" alt=""> <!-- 원의중심(x,y), 반지름 으로 지정 -->
+		<area shape="poly" coords="550,34,570,48,570,65,550,78,532,65,532,48" href="" alt=""> <!-- 각각의 꼭지점의 좌표를 각각 적는다. -->
+	</map>
+</p>
+</body>
+</html>

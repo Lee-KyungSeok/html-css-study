@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>flex</title>
+	<style>
+	body {
+		font: 12px 'Malgun Gothic',sans-serif;
+	}
+	#wrap {
+		width: 900px;
+		margin: 0 auto;
+		/* 컬럼으로 나눠지게 할 수 있다.
+			- float 이란 비슷하게 된다. 블록이 차례로 배치된다.
+			- 한번 더 감싸서 지정할 수 있다. 
+			- float 과 다르게 해지를 할 필요가 없다 */
+		display: flex;
+	}
+	#wrap h1 {
+		/* flex 속성은 비율로 줄 수 있다. 이는 1:3 으로 나누고 있다. */
+		flex: 1;
+	}
+	#wrap .text {
+		flex: 3;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>Flex example</h1>
+		<div class="text">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam enim officia totam hic provident eos, repellendus vel. Fugit soluta, harum ex illo dolorum consectetur et nam cum iure nemo facere, quibusdam architecto sit? Porro expedita rem, corporis quos nulla libero, voluptatum veritatis nemo voluptatibus deleniti, aliquid autem beatae sunt eligendi deserunt necessitatibus eius quisquam facilis quia laboriosam debitis distinctio modi dolorem ducimus. Itaque nulla necessitatibus quos harum dolor, facilis corrupti! Ipsum recusandae maiores necessitatibus architecto ab veritatis quam quisquam quas dolorem, at, temporibus. Iure quaerat incidunt illo nihil explicabo voluptatem, fugiat dolore pariatur mollitia aut? Aspernatur facilis inventore vitae eligendi.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum similique, voluptas et ut exercitationem a distinctio consectetur nulla sequi qui saepe id quaerat, beatae aspernatur aliquid maxime rem quas dolor!</p>
+		</div>
+	</div>
+</body>
+</html>

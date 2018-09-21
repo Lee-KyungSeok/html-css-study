@@ -1,0 +1,159 @@
+<!-- 이미지 크기가 다른 경우 리스트 만들기 
+ 	- 그림이 큰것을 기준으로 만들고 넘쳐나는 부분은 자른다.
+ 	- 그 후 작은부분의 높이를 맞춰준다. -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>gallery list</title>
+	<style>
+	/* reset */
+	html,body{width:100%;height:100%}
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-family:'Malgun Gothic',Dotum,AppleGothic,sans-serif;font-size:12px}
+	img{vertical-align: top;}
+	img,fieldset{border:0}
+	img{vertical-align:top}
+	ul,ol{list-style:none}
+	em,address{font-style:normal}
+	a{text-decoration:none}
+	a:hover,a:active,a:focus{text-decoration:underline}
+
+	/* style */
+	#content {
+		width: 900px;
+		margin: 0 auto;
+	}
+	#content h1 {
+		padding: 15px 0;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.flexible_img_col {
+
+	}
+	.flexible_img_col ul {
+		*zoom: 1;
+		border-bottom: 1px solid #ccc;
+	}
+	.flexible_img_col ul:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.flexible_img_col li {
+		position: relative; 
+		top: 1px;
+		float: left;
+		width: 120px;
+		height: 250px;
+		border-bottom: 1px solid #ccc;
+		padding: 20px 15px 0 15px;
+	}
+	.flexible_img_col li a {
+		display: block;
+		color: #333;
+		text-decoration: none;
+	}
+	.flexible_img_col li a .thumb {
+		display: block;
+		overflow: hidden; /* 넘쳐나는 부분을 hidden 처리 해서 category 가 넘칠 때 안보이게끔 한다. */
+		position: relative; 
+		background-color: #ededed;
+		text-align: center;
+		line-height: 80px; /* 작은 그림의 높이에 맞게 설정한다. */
+	}
+	.flexible_img_col li a .thumb img {
+		width: 100%; /* 폭을 지정한 크기에 맞게 만든다. */
+	}
+	.flexible_img_col li a .thumb em {
+		display: none; 
+		opacity: .6; 
+		position: absolute;
+		left: 0;
+		top: 50%; /* em 이 center로 가게 지정 */
+		margin-top: -100px; /* center 지정 후 크기의 절반을 위로 올려서 "글자"를 가운데로 가게 한다. */
+		width: 100%; /* 크게 지정 */
+		background-color: #000;
+		color: #fff;
+		font-family: verdana,sans-serif;
+		font-weight: bold;
+		line-height: 200px; /* 제일 큰 이미지를 덮을 수 있는 크기를 만든다. */
+	}
+	.flexible_img_col li a:hover .thumb em {
+		display: block; 
+	}
+	.flexible_img_col li a strong {
+		display: block; 
+		padding: 6px 0 2px;
+		line-height: 1.4;
+	}
+	.flexible_img_col li a:hover strong {
+		text-decoration: underline; 
+	}
+	.flexible_img_col li p {
+		color: #666;
+		font-size: 0.9em;
+	}
+	</style>
+</head>
+<body>
+
+<div id="content">	
+	<!-- UI Object -->
+	<h1>Flexible Image+Text Col List</h1>
+	<div class="flexible_img_col">
+		<ul>
+		<li>
+			<a href="#">
+				<span class="thumb">
+					<img src="img/@thumbHr.jpg" alt=""> 
+					<em>Category</em>
+				</span> 
+				<strong>이미지 제목</strong>
+			</a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb"><img src="img/@thumbVr.jpg" alt=""> <em>카테고리</em></span> <strong>이미지 제목 이미지 제목 이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb"><img src="img/@thumbHr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb"><img src="img/@thumbVr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb"><img src="img/@thumbHr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb"><img src="img/@thumbVr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb"><img src="img/@thumbVr.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		<li>
+			<a href="#"><span class="thumb">No Images <em>Category</em></span> <strong>이미지 제목</strong></a>
+			<p>2010-12-24</p>
+		</li>
+		</ul>
+	</div>
+	<!-- //UI Object -->
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>clear</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	img {
+		vertical-align: top;
+	}
+	.area {
+		width: 800px;
+		margin: 0 auto;
+		border: 3px dashed red;
+		*zoom: 1; 
+
+		/* 내가 지정한 영역에서 넘치는 부분을 가리킨다.
+			- hidden 을 하면 넘어가는 부분을 가린다는 의미
+			- after 대신 쓰기도 한다.(일반적으로는 after 방식을 쓴다.) */
+		overflow: hidden;
+	}
+/*	.area:after {
+		content: '';
+		display: block;
+		clear: both;
+	}*/
+	.area .thumb {
+		float: left;
+		border: 3px solid black;
+	}
+	.cls {
+		clear: both;
+	}
+	</style>
+</head>
+<body>
+
+<div class="area">
+	<div class="thumb"><img src="http://placehold.it/100x120?text=1"></div>
+	<div class="thumb"><img src="http://placehold.it/100x120?text=2"></div>
+	<div class="thumb"><img src="http://placehold.it/100x120?text=3"></div>
+	<div class="thumb"><img src="http://placehold.it/100x120?text=4"></div>
+	<div class="thumb"><img src="http://placehold.it/100x120?text=5"></div>
+
+</div>
+
+<p class="cls">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus nostrum quam dolore qui delectus similique repellat eaque esse, dolores consequatur! Possimus ut, iste voluptatum repudiandae, perferendis laboriosam. Saepe voluptatem quae iusto, atque, facilis necessitatibus quam ratione mollitia sequi sed doloremque blanditiis, culpa delectus asperiores libero. Ut harum perferendis architecto esse quis enim voluptas. Ab non nam illo ipsam odit, beatae aliquam pariatur et facilis maiores, dignissimos ratione recusandae in id at sequi aperiam. Non itaque labore accusantium ex soluta ducimus nobis cum fugit, magnam sapiente nesciunt amet, repudiandae hic quo nisi atque! Magni fuga saepe incidunt, ad architecto laboriosam sunt.</p>
+	
+</body>
+</html>

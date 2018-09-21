@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>word-break, white-space</title>
+	<style type="text/css">
+	body {
+		font-family: 'Malgun Gothic', sans-serif;
+		font-size: 18px;
+	}
+	.content, .content2 {
+		width: 500px;
+		border: 3px solid black;
+	}
+	.content p {
+		/* 원래는 너무 길어서 위에서 설정한 border 에 들어가지 않게 되지만 word-break 를 사용하면 단어를 깨뜨려서 안으로 들어가게끔 만들 수 있다. */
+		word-break: break-all;
+	}
+	.content2 p {
+		/* 양쪽 정렬을 하면 글자들의 크기가 안맞을 수 있다. 
+		   이 때, word-break 를 사용하면 단어가 끝이 안나도 줄바꿈을 하기 때문에 띄어쓰기의 간격이 동일하게 된다.(가독성은 떨어질 수 있다.)*/
+		text-align: justify;
+		word-break: break-all;
+	}
+
+	/* white space
+	   - nowrap: 브라우저 크기에 관계 없이 모두 한줄로 나타낸다.;
+	   - pre: pre 태그와 비슷하게 적용할 수 있다. (긴 텍스트는 border 를 넘어갈 수도 있다.)
+	   - pre-wrap: pre 태그와 동일하지만 긴 텍스트는 border 안에 들어갈 수 있다. (감싸져 있으면 줄바꿈을 한다.)
+	   - pre-line: pre-wrap 태그에서 앞의 공백을 제거해준다.
+	*/
+	.white1 {
+		white-space: pre;
+		width: 600px;
+		border: 2px solid black;
+	}
+	.white2 {
+		width: 600px;
+		border: 2px solid black;
+		white-space: pre-wrap;
+	}
+	.white3 {
+		width: 600px;
+		border: 2px solid black;
+		white-space: pre-line;
+	}
+	</style>
+</head>
+<body>
+<!-- word-break 나 white-space 는 잘 사용하지는 않는다. 
+	word-break 는 띄어쓰기가 잘 안되어 있는 경우 사용되는 경우가 있다.-->
+
+<div class="content">
+	<p>Loremipsumdolorsitamet,consecteturadipisicingelit.Illumdoloremiusto,estmaximesolutamollitianobisnequeaudantium,doloresconsequatur quasi, dolor quidem quod accusantium nihil praesentium ea. Odio, sint.40</p>
+</div>
+<div class="content2">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptates omnis labore, ut adipisci dolorem quisquam enim reprehenderit, sapiente ipsa odio vel aspernatur velit eius quasi! Laboriosam provident fugiat, neque officiis! Quis ducimus porro amet omnis beatae aliquid, nihil voluptates enim sit placeat laboriosam optio harum culpa architecto, laborum impedit, dolores quae quaerat, nulla ea quam cumque dolore. Ipsa facere doloribus, doloremque delectus, voluptatem ducimus totam neque porro amet impedit ea magni labore sed mollitia earum accusantium, officia consectetur illo ipsum aspernatur laudantium culpa? Aliquid earum vitae libero fuga error, nostrum vero hic delectus, eaque, veniam tenetur nisi eos ratione?</p>
+</div>
+
+<hr>
+<div class="white1">
+	Lorem 
+	ipsum dolor sit amet, 
+	consectetur.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, vitae, sit! Laudantium fuga id unde aliquam cupiditate in quasi error? Unde hic voluptates incidunt provident eveniet ipsum quas cum quaerat?
+</div>
+<div class="white2">
+	Lorem 
+	ipsum dolor sit amet, 
+	consectetur.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, vitae, sit! Laudantium fuga id unde aliquam cupiditate in quasi error? Unde hic voluptates incidunt provident eveniet ipsum quas cum quaerat?
+</div>
+<div class="white3">
+	Lorem 
+	ipsum dolor sit amet, 
+	consectetur.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, vitae, sit! Laudantium fuga id unde aliquam cupiditate in quasi error? Unde hic voluptates incidunt provident eveniet ipsum quas cum quaerat?
+</div>
+
+</body>
+</html>

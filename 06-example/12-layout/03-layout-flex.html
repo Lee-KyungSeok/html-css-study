@@ -1,0 +1,101 @@
+<!-- layout 만들기 
+	- 가변폭 2단 컬럼(aside) (flex 하게 변형) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>layout, 2column</title>
+	<style>
+	/* reset */
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-family:'Malgun Gothic','돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
+	img,fieldset{border:0}
+	img{vertical-align:top}
+	ul,ol{list-style:none}
+	em,address{font-style:normal}
+	a{text-decoration:none}
+	a:hover,a:active,a:focus{text-decoration:underline}
+
+	/* layout */
+	#wrap {
+		background-color: #888;
+	}
+	#header {
+		padding: 20px;
+		background-color: #ff0000;
+	}
+	#container {
+		padding-bottom: 30px;
+		*zoom: 1;
+		background-color: #00ff00;
+	}
+	#container:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	#container #content {
+		float: right;
+		width: 62%;
+		background-color: #0000ff; 
+	}
+	#container #content .inn {
+		/* % 와 px 를 같이 쓰고 싶은 경우에는 한번 감싸서 쓰면 효과적으로 작성할 수 있다. */
+		padding: 20px;
+	}
+	#container .aside {
+		float: left;
+		width: 38%; 
+		background-color: #00ffff;
+	}
+	#container .aside .inn {
+		padding: 20px;
+	}
+	#footer {
+		padding: 20px;
+		background-color: #ababab;
+	}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<h1>LOGO</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quos fugit natus non sunt perspiciatis, rerum nesciunt accusamus voluptatibus sequi ex eos corporis dolores rem, enim aspernatur modi amet. In!</p>
+	</div>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content">
+		<div class="inn">
+			<h2>Content</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quibusdam architecto quos at enim. Temporibus odio animi sequi earum tempora ipsam totam natus laboriosam nesciunt doloremque perferendis commodi aut explicabo blanditiis soluta illo dolores expedita beatae, debitis quaerat nobis ipsum odit vel. Earum veniam laudantium harum dicta ipsa facere. Blanditiis distinctio deleniti sapiente perspiciatis quibusdam est cumque ea obcaecati architecto nemo quisquam, illum nihil, dolorem, laudantium sequi id quasi tenetur voluptate asperiores libero hic explicabo! Nam ullam omnis ratione in ut repudiandae, voluptates totam vero tenetur laborum commodi, consequuntur necessitatibus ea quod mollitia officia eum inventore rerum reprehenderit minus cumque!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quibusdam architecto quos at enim. Temporibus odio animi sequi earum tempora ipsam totam natus laboriosam nesciunt doloremque perferendis commodi aut explicabo blanditiis soluta illo dolores expedita beatae, debitis quaerat nobis ipsum odit vel. Earum veniam laudantium harum dicta ipsa facere. Blanditiis distinctio deleniti sapiente perspiciatis quibusdam est cumque ea obcaecati architecto nemo quisquam, illum nihil, dolorem, laudantium sequi id quasi tenetur voluptate asperiores libero hic explicabo! Nam ullam omnis ratione in ut repudiandae, voluptates totam vero tenetur laborum commodi, consequuntur necessitatibus ea quod mollitia officia eum inventore rerum reprehenderit minus cumque!</p>
+		</div>
+		</div>
+		<!-- //content -->
+		<!-- aside -->
+		<div class="aside">
+		<div class="inn">
+			<h2>Aside</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, odio vitae enim aut provident aliquam, porro laboriosam neque, consequuntur impedit aliquid quae iure quo perferendis dolorem? Pariatur dignissimos ipsa ullam, ipsum aperiam facere inventore, vitae debitis quidem mollitia nobis quo rem culpa ad corporis explicabo? Error consectetur, quasi perspiciatis velit!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, odio vitae enim aut provident aliquam, porro laboriosam neque, consequuntur impedit aliquid quae iure quo perferendis dolorem? Pariatur dignissimos ipsa ullam, ipsum aperiam facere inventore, vitae debitis quidem mollitia nobis quo rem culpa ad corporis explicabo? Error consectetur, quasi perspiciatis velit!</p>
+		</div>
+		</div>
+		<!-- //aside -->
+	</div>
+	<!-- //container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<address>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, porro!</address>
+		<p>Copyright &copy;</p>
+	</div>
+	<!-- //footer -->
+</div>
+
+</body>
+</html>

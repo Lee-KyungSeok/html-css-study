@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<!-- 모바일용을 설정한다. -->
+	<meta name="viewport" content="width=devicd-width,initial-scale=1" >
+	<title>responsible web</title>
+
+	<!-- <link rel="stylesheet" href="css/style.css">
+	// 출력할 때는 이 스타일을 덮어쓰겠다(printer)
+	<link rel="stylesheet" href="css/printer.css" media="printer"> -->
+
+	<style>
+	body {
+		color: #555;
+		font: 12px/1.5 'Malgun Gothic',sans-serif;
+	}
+	#wrap {
+		width: 970px;
+		margin: 0 auto;
+		padding: 0 15px;
+		box-sizing: border-box;
+	}
+	/* 미디어 쿼리는 특정 조건을 넣어야 하므로 나중에 넣어준다. */
+	@media screen and (min-width: 1200px) { /* 1200px 보다 크면 바꾼다. */
+		#wrap {
+			width: 1200px;
+		}
+	}
+	@media screen and (max-width: 970px) {
+		#wrap {
+			width: auto; /* 이러면 970px 이하에서는 auto 가 된다. */
+		}
+	}
+	/* max 와 min 이 겹치면 문제가 생기므로 481 을 주었다. */
+	@media screen and (max-width: 970px) and (min-width: 481px) {
+		body {
+			background-color: yellow;
+		}
+	}
+	/* 모바일은 보통 480 or 380 을 기준으로 잡는다. */
+	@media screen and (max-width: 480px) { 
+		body {
+			font-size: 14px;
+		}
+	}
+	/* 세로보기(세로가 긴 경우) 인 경우 설정 */
+	@media screen and (orientation: portrait) {
+		h1:after {
+			content: ' portrait view';
+			font-size: .8em;
+			color: blue;
+		}
+	}
+	/* 가로가 더 큰 경우 설정 */
+	@media screen and (orientation: landscape) {
+		h1:after {
+			content: ' landscape view';
+			font-size: .8em;
+			color: red;
+		}
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>LOGO</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, laudantium accusantium dolorem tempore praesentium quo. Voluptas aliquam harum quia, pariatur amet temporibus magni provident porro natus! Eveniet eum eaque voluptatibus dignissimos omnis in tempora voluptatem culpa sapiente mollitia, distinctio beatae, atque veritatis. Modi perferendis, voluptatum quis nemo eveniet. Omnis blanditiis voluptates, voluptas eligendi! Vitae dolorum deleniti deserunt, eaque sequi nostrum. Facilis provident neque, libero, hic et illum quaerat, dignissimos asperiores cupiditate natus, voluptatum autem ratione velit similique enim impedit fuga nulla eaque! Quam cum ducimus molestiae eum, nam officiis ipsam saepe aut nostrum blanditiis, dolores earum consequuntur eveniet quaerat quia.</p>
+	</div>
+</body>
+</html>
+

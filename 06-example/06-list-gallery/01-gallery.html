@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>gallery list</title>
+	<style>
+	/* reset */
+	html,body{width:100%;height:100%}
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-family:'Malgun Gothic',Dotum,AppleGothic,sans-serif;font-size:12px}
+	img{vertical-align: top;}
+	img,fieldset{border:0}
+	img{vertical-align:top}
+	ul,ol{list-style:none}
+	em,address{font-style:normal}
+	a{text-decoration:none}
+	a:hover,a:active,a:focus{text-decoration:underline}
+
+	/* style */
+	#content {
+		width: 900px;
+		margin: 0 auto;
+	}
+	#content h1 {
+		padding: 15px 0;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.fixed_img_col {
+
+	}
+	.fixed_img_col ul {
+		*zoom: 1;
+		border-bottom: 1px solid #ccc;
+	}
+	.fixed_img_col ul:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.fixed_img_col li {
+		position: relative; /* li 를 현재위치를 기준으로 1px 내려서 아래쪽 border 를 맞추었다. */
+		top: 1px;
+		float: left;
+		width: 120px;
+		height: 190px; /* float 에서 크기를 모르기때문에 height 를 주어야 한다. */
+		border-bottom: 1px solid #ccc;
+		padding: 20px 15px 0 15px;
+	}
+	.fixed_img_col li a {
+		display: block; /* position 때문에 block 요소로 지정 */
+		color: #333;
+		text-decoration: none;
+	}
+	.fixed_img_col li a .thumb {
+		display: block;
+		position: relative; /* 이를 기준으로 em(category) 가 img 안으로 들어가게 끔 absolute 를 지정한다. */
+		background-color: #ededed;
+		text-align: center;
+		line-height: 120px; /* 높이를 이미지 크기에 맞게 지정 */
+	}
+	.fixed_img_col li a .thumb img {
+
+	}
+	.fixed_img_col li a .thumb em {
+		display: none; /* 처음엔 안나오게 */
+		opacity: 0.6; /* 투명도 설정 - css3 속성 */
+		/*filter : filter 는 IE 이전 버전을 위함 (잘 안쓰므로 pass); */
+		position: absolute;
+		left: 0%;
+		top: 0;
+		width: 100%; /* 크게 지정 */
+		background-color: #000;
+		color: #fff;
+		font-weight: bold;
+		font-family: verdana,sans-serif;
+		/*line-height: 120px;  높이를 이미지 크기에 맞게 지정 => 그런데 .thumb 에서 지정했으므로 제거*/
+		/*text-align: center;  가운데 지정 => 상동 */
+	}
+	.fixed_img_col li a:hover .thumb em {
+		display: block; /* 마우스 올리면 em 이 보이게 설정 */
+	}
+	.fixed_img_col li a strong {
+		display: block; /* inline 이면 margin 이나 padding 이 잘 안되기 때문에 block 처리 한다. */
+		padding: 6px 0 2px; /* top | left right | bottom */
+		line-height: 1.4; /* 줄이 여러줄이 되면 line-height 를 넣어야 일정하게 되므로 넣어주는 습관을 기르자 */
+	}
+	.fixed_img_col li a:hover strong {
+		text-decoration: underline; /* strong 에만 밑줄이 나오게 설정 */
+	}
+	.fixed_img_col li p {
+		color: #666;
+		font-size: 0.9em;
+	}
+	</style>
+</head>
+<body>
+
+<div id="content">	
+	<!-- UI Object -->
+	<h1>Fixed Image+Text Col List</h1>
+	<div class="fixed_img_col">
+		<ul>
+			<li>
+				<a href="#">
+					<span class="thumb">
+						<img src="img/@thumbSquare.jpg" alt=""> 
+						<em>Category</em>
+					</span> 
+					<strong>이미지 제목</strong>
+				</a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목 이미지 제목 이미지 제목</strong></a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#"><span class="thumb"><img src="img/@thumbSquare.jpg" alt=""> <em>Category</em></span> <strong>이미지 제목</strong></a>
+				<p>2010-12-24</p>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb">
+						No Images 
+						<em>Category</em>
+					</span> 
+					<strong>이미지 제목</strong>
+				</a>
+				<p>2010-12-24</p>
+			</li>
+		</ul>
+	</div>
+	<!-- //UI Object -->
+</div>
+	
+</body>
+</html>

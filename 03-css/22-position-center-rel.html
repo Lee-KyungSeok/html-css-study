@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>position, center</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html, body {
+		/* 크기를 꽉 채운다. 그러면 내용이 있던 없던 전체 크기를 지정해 줄 수 있다.
+			- 그러면 relative 로도 적용이 된다. */
+		width: 100%;
+		height: 100%;
+	}
+	.content {
+		position: relative;
+		left: 50%;
+		top: 50%;
+		width: 800px;
+		height: 400px;
+		margin-left: -400px;
+		margin-top: -200px; 
+		background-color: lime;
+	}
+	.content .inn {
+		padding: 20px;
+	}
+	</style>
+</head>
+<body>
+
+<div class="content">
+	<div class="inn">
+		<h1>content title</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet repellendus impedit mollitia porro at aliquid sint distinctio totam quis repellat beatae itaque suscipit et reprehenderit magni cupiditate earum cumque, voluptatem, blanditiis optio quidem! Dolor laudantium qui ab, aspernatur delectus quia iure suscipit. Aut fugiat, dignissimos debitis et ab, est tempora accusamus culpa ea ducimus, qui unde animi asperiores. Provident assumenda aliquid doloribus tenetur animi odio, nemo porro dolorem dicta hic atque voluptate possimus explicabo odit, architecto facilis libero cupiditate dolore accusamus inventore ipsam quia enim, officia! Reiciendis adipisci soluta aliquam voluptas nostrum ut in nisi mollitia obcaecati, ab expedita consequatur.</p>
+	</div>
+</div>
+	
+</body>
+</html>	

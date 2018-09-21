@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>css selector2</title>
+	<style type="text/css">
+	body {
+		color: #333;
+	}
+	a {
+		color: #888;
+		text-decoration: none;
+	}
+
+	/* a 태그에는 기본적으로 color 와 text-decoration 이 적용되어 있다. 
+		또한 만약 아래의 a 태그의 기능을 쓰고 싶다면 반드시 link-visited-hover-active 순서로 적용시켜야 함을 생각해야 한다. */
+	/* a 태그에 link 가 걸려있는 상태이면 적용 */
+	a:link {
+		color: green;
+		text-decoration: underline;
+	}
+	/* 방문한 흔적이 있는 상태이면 적용 */
+	a:visited {
+		color: gray;
+		text-decoration: underline;
+	}
+	/* 마우스가 올라가 있는 상태이면 적용 */
+	a:hover {
+		color: red;
+		text-decoration: underline;
+	}
+	/* 눌렀을 때 적용 */
+	a:active {
+		color: orange;
+		text-decoration: underline;
+	}
+	/* focus 가 들어왔을 때 적용 */
+	a:focus {
+		background: yellow;
+	}
+
+	/* 아래처럼 한번에 적용할수도 있다. */
+	a:hover, a:active, a:focus {
+		color: blue;
+		text-decoration: none;
+	}
+
+	/* class 가 lead 에서 첫줄만 바뀌게 한다. */
+	.lead:first-line {
+		background-color: lime;
+	}
+	/* 첫글자에만 적용한다. */
+	.lead:first-letter {
+		font-size: 5em;
+	}
+
+	/* h1 태그가 시작하는 지점, 끝나는 지점에 넣는다. 
+		플롯을 이용할 때 자주 사용되는 선택자이다.*/
+	h1:before {
+		content: 'Before area';
+		color: blue;
+	}
+	h1:after {
+		content: 'After area';
+		color: red;
+	}
+
+	/*  클래스가 tag 보다 우선순위가 높다(순서하고는 관계가 없음에 주의) 
+		같은 태그인 경우 나중 순서의 스타일이 적용
+
+		<우선순위>
+		type. : 1
+		class : 10
+		id.   : 100
+		모두 있다면 1+ 10 + 100 = 111 이다.
+		type 과 class : 1 + 10 = 11
+
+		=> inline style 로 직접 태그에 적용한 것이 가장 우선순위가 높다. (1000 정도)
+		=> 그러나 이보다 !important 로 적용하면 무조건 적용된다(우선순위가 낮아도 적용시킨다. 하지만 안쓰는게 좋다.)
+		*/
+	div {
+		background-color: lime;
+	}
+	.sample {
+		background-color: green;
+	}
+	#sample {
+		background-color: purple;
+	}
+	div#sample.sample {
+		background-color: red;
+	}
+	div {
+		background-color: orange !important;
+	}
+	</style>
+</head>
+<body>
+
+<h1>css selector2</h1>
+<p class="lead"><a href="https://naver.com/">naver</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nostrum, mollitia id exercitationem praesentium suscipit eligendi, libero fuga alias reprehenderit deserunt vel <a href="#">quis odit nulla esse atque fugiat. Facilis, tempore</a>.</p>
+
+<hr>
+
+<div class="sample" id="sample" style="background-color: yellow;">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus molestiae dignissimos quaerat ipsum adipisci illo ratione vel laborum dicta, voluptate cumque placeat enim culpa, sint ex ut blanditiis, dolor odit!
+</div>
+	
+</body>
+</html>

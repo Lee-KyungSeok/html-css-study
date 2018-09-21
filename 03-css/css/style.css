@@ -1,0 +1,6 @@
+/* 아래처럼 utf-8 처리를 하지 않으면 가끔 에러가 뜨므로 반드시 선언해 주도록 해주자.
+	또한 ; 을 잊지 않도록 한다.*/
+@charset "utf-8";
+p {
+	background-color: lightblue;
+}

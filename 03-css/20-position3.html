@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>position</title>
+	<style type="text/css">
+	.box {
+		width: 200px;
+		padding: 20px;
+		background-color: rgba(255,0,0,0.5);
+		border: 5px solid black;
+		font: 12px/1.6 verdana, sans-serif;
+	}
+	.box:first-letter {
+		font-size: 2em;
+		font-weight: bold;
+	}
+	.area {
+		position: relative;
+		border: 5px dashed red;
+		width: 800px;
+		margin: 0 auto;
+	}
+	.a {
+		/*상대적인 위치로 움직이게 된다. (즉, 겹치지 않고 포지션이 지정된다.)
+			또한 원래 있던 영역들이 고정된다.
+			따라서 margin 을 이용해서 줄여야 빈공간이 사라지게 할 수 있다.*/
+		position: relative;
+		left: 0;
+		top: 0;
+		background-color: rgba(255,0,0, .8);
+	}
+	.b {
+		position: relative;
+		left: 50px;
+		margin-top: -200px;
+		background-color: rgba(0,255,0, .8);
+	}
+	.c {
+		position: relative;
+		left: 100px;
+		margin-top: -200px;
+		background-color: rgba(0,0,255, .8);
+	}
+	</style>
+</head>
+<body>
+
+<div class="area">
+	<div class="box a">A Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates eos, harum repellat vero, sunt nam magnam ut doloribus fugit iste illo voluptatum molestiae tempora labore facere omnis. Vero molestias repellendus minus sed voluptatum, cupiditate. A, voluptas! Nostrum libero aut quia rerum eum omnis expedita neque, voluptatum itaque, incidunt, maxime nulla?</div>
+	<div class="box b">B Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates eos, harum repellat vero, sunt nam magnam ut doloribus fugit iste illo voluptatum molestiae tempora labore facere omnis. Vero molestias repellendus minus sed voluptatum, cupiditate. A, voluptas! Nostrum libero aut quia rerum eum omnis expedita neque, voluptatum itaque, incidunt, maxime nulla?</div>
+	<div class="box c">C Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates eos, harum repellat vero, sunt nam magnam ut doloribus fugit iste illo voluptatum molestiae tempora labore facere omnis. Vero molestias repellendus minus sed voluptatum, cupiditate. A, voluptas! Nostrum libero aut quia rerum eum omnis expedita neque, voluptatum itaque, incidunt, maxime nulla?</div>
+</div>
+<hr>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi expedita commodi debitis voluptatem at officiis adipisci suscipit doloribus autem ratione porro neque vero voluptatibus excepturi maiores voluptates quibusdam rem, eligendi ipsam nisi quam laborum odio molestias repellat. Placeat aliquid amet aspernatur quis maiores commodi, excepturi eligendi hic cum facilis vero possimus repudiandae ab tempore. Voluptates quam, enim ipsam autem, placeat suscipit accusamus laboriosam iure quos tempore laborum. Quae quos, quisquam harum pariatur quasi, saepe aperiam incidunt voluptate facilis itaque, asperiores repudiandae voluptatum ad doloribus architecto! Temporibus, molestiae natus repudiandae, omnis quam doloribus, illo labore facere, odit dignissimos dolorum amet! Quia ipsa ex, natus aspernatur repellat minima totam similique necessitatibus veritatis quas perferendis eos ipsum fugit blanditiis impedit aut rem enim laborum autem beatae ipsam amet cumque! Sequi magni, eaque sint in possimus impedit, ut odit saepe! Deserunt nihil, doloribus, eum est laudantium tempore quis porro aspernatur odio tempora vel, facilis natus. Atque quia officiis dolorum, laboriosam magnam quae facere et voluptatibus eligendi repellendus harum, reiciendis, quo animi quis? Perferendis alias repellat, ratione accusantium saepe consectetur odit deleniti at ut rem eos, velit similique magni, quae totam id nam doloremque commodi assumenda vitae. Similique sunt cum labore dolore saepe molestias perspiciatis!</p>
+	
+</body>
+</html>

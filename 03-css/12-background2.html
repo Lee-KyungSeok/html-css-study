@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>background</title>
+	<style type="text/css">
+
+	.box {
+		width: 600px;
+		padding: 20px;
+		border: 3px solid black;
+		background: url(img/photo.jpg) no-repeat 50% 20%;
+	}
+
+	.box2 {
+		/* css3 속성으로 size 를 크기에 맞게 조절할 수 있다. 
+			- 그림이 찌그러질 수 있기 때문에 가로 혹은 세로 중 하나를 맞추고 나머지 이미지를 맞추는 것을 추천한다.(auto로)
+			- 가로 세로 중 어느것이 큰지 모를 수 있으므로 cover 를 사용할 수 있다.(큰 것에 맞춰진다.)
+			- IE8 이하에서는 안되므로 모바일 웹페이지에서 사용하도록 하자
+		*/
+		/*background-size: 100% 100%;*/
+		/*background-size: 100% auto;*/
+		/*background-size: auto 100%;*/
+		background-size: cover;
+		
+		/* background 를 어디에만 보이게 할지 지정할 수 있다. 
+			- content-box 이면\ content 에 맞춰서 그림이 보인다.
+		 */
+		background-clip: content-box;
+
+		/* background 의 기준을 변경한다.
+			- content-box 이면 background 의 기준이 content 가 된다. 즉, padding 영역을 띄우고 background 를 실행한다. (그림 크기가 달라질 수 있다.)
+		 */
+		background-origin: content-box;
+	}
+	</style>
+</head>
+<body>
+
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis recusandae eligendi vel obcaecati exercitationem rem, qui alias dolores ipsam accusantium repellendus labore optio eos. Dignissimos optio laboriosam, voluptas temporibus quibusdam incidunt tempore quos voluptate inventore consectetur eaque? Quaerat vero fugit, eaque tenetur, incidunt eligendi animi sit quas facilis non velit molestiae fugiat delectus illum in maiores earum, nisi illo, aliquid quisquam ipsam deserunt adipisci? Molestiae cupiditate iusto, perferendis atque nemo? Molestiae dolor praesentium, aliquam perferendis, harum rem, sequi animi voluptas quae accusantium placeat voluptates consectetur est asperiores facilis voluptate facere a veniam nesciunt modi odit ad odio! A, inventore.
+</div>
+
+<div class="box box2">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis recusandae eligendi vel obcaecati exercitationem rem, qui alias dolores ipsam accusantium repellendus labore optio eos. Dignissimos optio laboriosam, voluptas temporibus quibusdam incidunt tempore quos voluptate inventore consectetur eaque? Quaerat vero fugit, eaque tenetur, incidunt eligendi animi sit quas facilis non velit molestiae fugiat delectus illum in maiores earum, nisi illo, aliquid quisquam ipsam deserunt adipisci? Molestiae cupiditate iusto, perferendis atque nemo? Molestiae dolor praesentium, aliquam perferendis, harum rem, sequi animi voluptas quae accusantium placeat voluptates consectetur est asperiores facilis voluptate facere a veniam nesciunt modi odit ad odio! A, inventore.
+</div>
+
+</body>
+</html>

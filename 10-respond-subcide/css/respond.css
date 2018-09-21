@@ -1,0 +1,75 @@
+/* medium size */
+@media screen and (max-width: 760px) {
+	#wrap {
+		width: auto;
+	}
+	#footer .btm_menu {
+		float: none; /* 플롯을 제거 */
+		margin-bottom: 10px; /* 마진을 주어 구분시킨다. */
+	}
+}
+
+/* small size */
+@media screen and (max-width: 480px) {
+	body,h1,h2 {
+		/* 모바일에서는 폰트를 조금 더 올리게 된다. */
+		font-size: 14px;
+	}
+	/* 헤더 부분을 변경 */
+	#header {
+		padding-bottom: 0;
+		background-image: none !important; /* 무조건 적용시킨다. */
+	}
+	#header .logo {
+		position: static; /* 포지션을 원래 상태로 변경 */
+		background-color: #272727; /* 색을 지정 */
+		text-align: center; /* 글자를 센터로 변경 */
+	}
+	#header .logo a {
+		display: block;
+		padding: 5px 0;
+	}
+	#header .lnb {
+		padding-left: 0;
+	}
+	#header .lnb li {
+		float: none;
+	}
+	#header .lnb li a {
+		width: 100% !important;
+		height: 40px;
+		border-bottom: 1px solid #555;
+		/* 이미지를 없애고 글자를 꾸민다. */
+		background-color: #444;
+		color: #999;
+		background-image: none !important;
+		font: bold 18px/40px "Trebuchet MS",sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-indent: 0;
+	}
+	#header .lnb li a.on,
+	#header .lnb li a:hover {
+		/* 선택 된 것을 변경 */
+		border-bottom-color: #777; 
+		background-color: #666;
+		color: #fff;
+	}
+	
+	/* container */
+	#container #content {
+		float: none;
+		width: 100%;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #ccc;
+	}
+	#container #aside {
+		float: none;
+		width: 100%;
+	}
+	#container #aside .inner {
+		padding-left: 25px; /* 원래가 오른쪽만 줬으므로 왼쪽도 준다. */
+	}
+}
+

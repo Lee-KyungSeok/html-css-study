@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>css basic</title>
+	<style type="text/css">
+	html {
+		font-size: 15px;
+	}
+	body {
+		background: url(img/bg.jpg);
+	}
+	h1 {
+		/*color: #ff0000;  색상 코드를 쓰는 것이 더 좋다.*/
+		/*color: rgb(255,0,0);  rgb 로 다루는 방법도 자주 사용한다. */
+		/*color: rgb(100%, 0%, 0%);  비율을 통해서도 적용할 수 있다. */
+		/*color: hsl(0,100%,50%);  색상, 채도, 명도 를 결정한다. (html5 에서 추가됨 => 따라서 이전 버전을 사용하는것이 나을수도 있다.)*/
+		/*color: rgba(255, 0, 0, 0.8);  마지막에 투명도(알파값)를 넣을 수 있다. */
+		color: hsla(0, 100%, 50%, 0.4); /* 마지막 투명도 적용 가능 */
+		font-size: 10em /* 크기를 10배로 키운다. */
+	}
+	p {
+		/* <상대값을 나타내는 단위(자주 쓰임)
+		   px : 1픽셀을 1로 하는 단위
+		   em : 폰트의 높이를 1로 하는 단위(즉, 글자크기와 관련되기 때문에 font-size 에 따라 값이 달라진다.)
+		   %  : 기준이 되는 크기에 대한 비율 (비율과 관련되므로 창에 따라 크기가 달라짐)
+		   rem: (html5) 루트인 html의 값을 기준으로 계산 (지정한 font 가 아니라 html의 font 에만 영향을 받는다.)
+
+		   <절댓값을 나타내는 단위(pt 만 조금 쓰이고 나머지는 잘 안쓰인다.)
+		   pt: 포인트
+		   in: 인치
+		   cm: 센티미터
+		   mm: 밀리미터*/
+
+		/* width: 500px; */
+		/* width: 50em; 
+		font-size: 12px; */
+		/*width: 50%;*/
+		width: 50rem;
+
+		background-color: lime;
+	}
+	</style>
+</head>
+<body>
+
+<h1>css basic</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui pariatur at aliquam repellendus delectus alias in quam ducimus necessitatibus molestiae.</p>
+	
+</body>
+</html>

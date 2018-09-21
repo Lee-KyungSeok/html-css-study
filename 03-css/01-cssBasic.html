@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>css basic</title>
+	<!-- 보통 css 파일은 따로 파일을 지정해서 사용한다. -->
+	<!-- html5 이전에는 타입을 반드시 지정해 주어야 한다. -->
+	<style type="text/css">
+	/* import 해서 외부 파일을 적용시킬 수도 있다. (아래처럼 link 를 이용할 수도 있다.) */
+	@import url(css/style.css);
+	/*@import "css/style.css"  // 이도 같은 형식이다.*/
+	h1 {
+		color: red; /* 글자색 */
+		background-color: lime; /* 배경색 */
+	}
+	</style>
+	<!-- 외부 css 파일을 적용시킬때는 link 를 사용한다. -->
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<!-- stype 속성에 넣을 수도 있다.
+	하지만 좋은 방법은 아니지만 가끔 사용할 때가 있으므로 알아 두어야 한다. -->
+<h1 style="border-bottom: 5px solid blue">css basic</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem molestiae perspiciatis hic? Molestiae corrupti aut odit accusamus dolorem, recusandae aperiam. Iste, illum delectus culpa, ad impedit eveniet error sequi aspernatur! Architecto autem reprehenderit accusamus doloremque adipisci voluptatum dicta id, dolor impedit tempore similique at beatae facilis, facere, soluta debitis. Eum, ullam ipsa. Rerum sequi inventore, ullam exercitationem eius dignissimos dolorem ad repudiandae ea quasi facere optio nihil perferendis libero eaque alias sint ipsa, numquam! Dolore laboriosam, similique facilis tempore non tenetur quibusdam. Mollitia obcaecati soluta minus, eligendi assumenda dolore, nisi natus. Tempora, molestias blanditiis, obcaecati iure perspiciatis dignissimos sunt eos.</p>
+	
+</body>
+</html>

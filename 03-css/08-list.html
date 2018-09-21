@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>list</title>
+	<style type="text/css">
+	.list {
+		/* list-style 은 bullet 의 스타일(앞의 점 부분) 을 설정한다. 
+		   (none 이면 지운다. => 보통 none 을 지정한다.)*/
+		/*list-style: none;*/
+	}
+	.list li {
+		background-color: lime;
+		/* list-style-position
+			- inside: 안쪽에 나온다.(여기서는 background-color 안쪽에 bullet 이 들어간다.
+			- outside: 바깥쪽에 나옴(위와 반대)
+			- inherit: 특정값이라기 보다는 상속임(부모 적용된 것을 그대로 받겠다 하는 것 (참고));
+			하지만 잘 안쓴다 (원하는 대로 잘 지정이 안된다.)
+		*/
+		list-style-position: outside;
+
+		/* bullet 의 모양을 지정
+			- circle: 안에 빈점
+			- disc: 검은 점
+			- square: 사각 점
+			이것도 잘 안쓴다.
+		*/
+		list-style-type: upper-latin;
+
+		/* list-style-type 참고 (다 적용안되고, 잘 안쓰이지만...)
+		upper-roman | lower-roman |          : 로마 숫자로 순서를 나타낸다(ol 태그 생각하면 됨);
+		lower-greek | 				         : 그리스문자 형태;	
+		lower-alpha | upper-alpha |          : ...;
+		lower-latin | upper-latin |          : ...;
+		armenian | georgian | hebrew | 	
+		cjk-ideographic | cjk-heavenly-stem
+		hiragana | katakana | 
+		hiragana-iroha | katakana-iroha |
+		hangul | hangul-consonant |			 : 한글 형태(이것도 잘 안쓰임);
+
+		*/
+	}
+	</style>
+</head>
+<body>
+
+<ul class="list">
+	<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, odio.</li>
+	<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, odio.</li>
+	<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, odio.</li>
+	<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, odio.</li>
+	<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, odio.</li>
+</ul>
+	
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>transition</title>
+	<style>
+	body {
+		font: 12px 'Malgun Gothic',sans-serif;
+	}
+	#wrap {
+		width: 900px;
+		margin: 0 auto;
+	}
+	.box {
+		width: 100px;
+		height: 100px;
+		background-color: lime;
+		/* 모든 곳에 적용하려면 all / 시간을 3s 주었다. 
+			- 특정한 곳에만 적용하고 싶다면 all 대신 width 등으로 지정할 수 있다.
+			- transition 은 특정 브라우저 지원하도록 설정해야 한다. */
+		/*-webkit-transition: all 3s;
+		-o-transition: all 3s;
+		transition: all 3s;*/
+
+		/*
+		 // 속성을 지정 width all 등 지정 
+		transition-property: width;
+		 // 시간을 지정 
+		transition-duration: 3s;
+		 // 딜레이 될 시간을 지정 (1초 후에 시작됨) 
+		transition-delay: 1s;
+		 // transition timing 지정 (linear 는 일정한 속도로 늘어나게 된다.)
+		 	- linear | ease | 
+		 	- ease-in (점점빨라지게 - cubic-bezier(0.25, 1.5, 0.75, -0.5) 과 동일) |
+		 	- ease-out | ease-in-out | 
+		 	- steps(1, start) | steps(1, end)
+		transition-timing-function: linear;
+		*/
+
+		/* transition 은
+			- 앞이 delay 뒤가 duration */
+		/*transition: width 3s 1s linear;*/
+		
+		/* 각 속성마다 다르게 transition 을 적용할 수도 있다. */
+		/* transition: 
+			width 3s linear,
+			height 1s 3s,
+			background 2s 4s;
+		*/
+
+		/* 좌표를 잡아서 설정된다. */
+		/*transition: all 1s cubic-bezier(0.25, 1.5, 0.75, -0.5);*/
+
+		/* 특정 지점까지 끊어서 진행한다. 
+			- start: 바로 시작
+			- end: 약간 딜레이 ! but> 끝났을 때 delay 가 온다.*/
+		transition: all 1s steps(20, end);
+
+	}
+	.box:hover {
+		/* 마우스 올리면 커지게 한다. */
+		width: 100%;
+		height: 200px;
+		background-color: blue;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="box">
+			
+		</div>
+	</div>
+</body>
+</html>

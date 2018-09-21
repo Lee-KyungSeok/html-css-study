@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>clear</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	img {
+		vertical-align: top;
+	}
+	.area {
+		width: 800px;
+		margin: 0 auto;
+		border: 3px dashed red;
+
+		/*.zoom: IE, Chrome 에서 지원 
+			- IE6, IE7 Hack (*zoom)
+			- IE 몇몇 버전에 적용해야 하기 때문에 이를 사용해야만 한다. 
+			- (좋은 방법은 아니지만 after 를 지원하지 않는 브라우저를 위해 공식처럼 사용하도록 한다.)
+		*/
+		*zoom: 1; 
+	}
+	/* float 을 해제하기 위해서는 after 에서 설정하도록 한다. block 지정을 하고 clear 를 한다.
+		- 공식처럼 사용해야 한다.*/
+	.area:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.area .thumb {
+		float: left;
+		border: 3px solid black;
+	}
+	.cls {
+		clear: both;
+	}
+	</style>
+</head>
+<body>
+
+<div class="area">
+	<div class="thumb"><img src="http://placehold.it/100x120?text=1"></div>
+	<div class="thumb"><img src="http://placehold.it/100x120?text=2"></div>
+	<div class="thumb"><img src="http://placehold.it/100x120?text=3"></div>
+	<div class="thumb"><img src="http://placehold.it/100x120?text=4"></div>
+	<div class="thumb"><img src="http://placehold.it/100x120?text=5"></div>
+
+<!-- clear 위치는 여기에 주어야만 한다. 
+	따라서  :after 애 clear 를 준다.-->
+</div>
+
+<p class="cls">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus nostrum quam dolore qui delectus similique repellat eaque esse, dolores consequatur! Possimus ut, iste voluptatum repudiandae, perferendis laboriosam. Saepe voluptatem quae iusto, atque, facilis necessitatibus quam ratione mollitia sequi sed doloremque blanditiis, culpa delectus asperiores libero. Ut harum perferendis architecto esse quis enim voluptas. Ab non nam illo ipsam odit, beatae aliquam pariatur et facilis maiores, dignissimos ratione recusandae in id at sequi aperiam. Non itaque labore accusantium ex soluta ducimus nobis cum fugit, magnam sapiente nesciunt amet, repudiandae hic quo nisi atque! Magni fuga saepe incidunt, ad architecto laboriosam sunt.</p>
+	
+</body>
+</html>

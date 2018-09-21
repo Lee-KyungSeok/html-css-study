@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>background</title>
+	<style type="text/css">
+	body {
+		/* 아래는 순서대로 background, repeat, attachment position 을 지정(순서는 상관X)*/
+		background: url(img/twt.png) no-repeat fixed 90% 20px;
+
+		/* fixed 를 하게 되면 스크롤을 해도 그림의 위치가 고정되어 나타난다.*/
+		/*background-attachment: fixed;*/
+	}
+
+	.box {
+		width: 600px;
+		padding: 20px;
+		border: 3px solid black;
+
+		/* background 는 색상, 이미지, 배치 등 한번에 지정할때 background 로 한다. 
+			- 단, 모든지 "-" 가 붙지 않은 것을 머저 써주고 다른 것을 써주는 습관을 들여야 한다. 왜냐하면 아래쪽에 있는 것이 적용되기 때문*/
+		/*background: url(img/twt.png);*/
+
+		/* 배경색은 box 로 표현된 모든 곳에 적용됨 */
+		background-color: yellow;
+
+		/* 이미지를 넣어줌 */
+		background-image: url(img/twt.png);
+
+		/* 반복을 지정
+			- repeat (디폴트) | no-repeat | repeat-x | repeat-y
+		 */
+		background-repeat: no-repeat; /* x 축으로만 반복 */
+
+		/* 위치를 지정하는데 가로, 세로의 위치를 순서대로 지정해야 한다. 
+		   (% / px 등으로 지정할 수 있다. 
+		    또한 "-" 를 지정해서 바깥으로 나가게 할 수 있다.)
+			- 가로지정: left(0) | center(50%) | right(100%)
+			- 세로지정: top(0) | center(50%) | bottom(100%) */
+		background-position: 30px 50%; 
+	}
+	</style>
+</head>
+<body>
+
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis recusandae eligendi vel obcaecati exercitationem rem, qui alias dolores ipsam accusantium repellendus labore optio eos. Dignissimos optio laboriosam, voluptas temporibus quibusdam incidunt tempore quos voluptate inventore consectetur eaque? Quaerat vero fugit, eaque tenetur, incidunt eligendi animi sit quas facilis non velit molestiae fugiat delectus illum in maiores earum, nisi illo, aliquid quisquam ipsam deserunt adipisci? Molestiae cupiditate iusto, perferendis atque nemo? Molestiae dolor praesentium, aliquam perferendis, harum rem, sequi animi voluptas quae accusantium placeat voluptates consectetur est asperiores facilis voluptate facere a veniam nesciunt modi odit ad odio! A, inventore.
+</div>
+
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis recusandae eligendi vel obcaecati exercitationem rem, qui alias dolores ipsam accusantium repellendus labore optio eos. Dignissimos optio laboriosam, voluptas temporibus quibusdam incidunt tempore quos voluptate inventore consectetur eaque? Quaerat vero fugit, eaque tenetur, incidunt eligendi animi sit quas facilis non velit molestiae fugiat delectus illum in maiores earum, nisi illo, aliquid quisquam ipsam deserunt adipisci? Molestiae cupiditate iusto, perferendis atque nemo? Molestiae dolor praesentium, aliquam perferendis, harum rem, sequi animi voluptas quae accusantium placeat voluptates consectetur est asperiores facilis voluptate facere a veniam nesciunt modi odit ad odio! A, inventore.
+</div>
+
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, quisquam illum, aperiam quaerat dolorem consequuntur dolorum ab corrupti cum labore delectus iste, nesciunt tempore tempora dolore non. Nihil similique ipsa vel minus magni animi quos, eos! Inventore dolorem consequatur rem minima quaerat ut nobis sed, culpa iusto voluptate. Hic ipsam delectus non autem saepe eaque rerum perferendis, maiores, aspernatur quos assumenda quas. Ad nam officiis dolor placeat necessitatibus quis, harum, deleniti totam asperiores alias repudiandae quod delectus adipisci minus recusandae sequi maxime, enim labore atque. Similique tempora ratione voluptas unde assumenda excepturi sed placeat quisquam ipsum minima, quam perferendis odit explicabo ut, labore natus incidunt maiores magnam dolores. Dolorem quisquam exercitationem quia rerum officiis, ea cupiditate saepe corporis magni minus cum incidunt eius molestiae suscipit, repudiandae nihil similique laudantium. Voluptatum ad magni sapiente commodi ullam modi vitae rem quia corporis veniam blanditiis, accusamus laborum voluptas exercitationem itaque ducimus reiciendis nobis, earum mollitia aliquid. Minus distinctio at, eos explicabo, rerum veniam aliquid assumenda fuga, voluptatum corporis a molestias magni illum, animi rem ipsam non necessitatibus reiciendis voluptas aspernatur quam excepturi quae amet. Iure unde necessitatibus, porro molestias rerum itaque, similique quisquam dicta voluptatem a, animi autem et hic facilis ipsam nesciunt!
+</div>
+
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, quisquam illum, aperiam quaerat dolorem consequuntur dolorum ab corrupti cum labore delectus iste, nesciunt tempore tempora dolore non. Nihil similique ipsa vel minus magni animi quos, eos! Inventore dolorem consequatur rem minima quaerat ut nobis sed, culpa iusto voluptate. Hic ipsam delectus non autem saepe eaque rerum perferendis, maiores, aspernatur quos assumenda quas. Ad nam officiis dolor placeat necessitatibus quis, harum, deleniti totam asperiores alias repudiandae quod delectus adipisci minus recusandae sequi maxime, enim labore atque. Similique tempora ratione voluptas unde assumenda excepturi sed placeat quisquam ipsum minima, quam perferendis odit explicabo ut, labore natus incidunt maiores magnam dolores. Dolorem quisquam exercitationem quia rerum officiis, ea cupiditate saepe corporis magni minus cum incidunt eius molestiae suscipit, repudiandae nihil similique laudantium. Voluptatum ad magni sapiente commodi ullam modi vitae rem quia corporis veniam blanditiis, accusamus laborum voluptas exercitationem itaque ducimus reiciendis nobis, earum mollitia aliquid. Minus distinctio at, eos explicabo, rerum veniam aliquid assumenda fuga, voluptatum corporis a molestias magni illum, animi rem ipsam non necessitatibus reiciendis voluptas aspernatur quam excepturi quae amet. Iure unde necessitatibus, porro molestias rerum itaque, similique quisquam dicta voluptatem a, animi autem et hic facilis ipsam nesciunt!
+</div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>tabmenu</title>
+	<style>
+	/* reset */
+	html,body{width:100%;height:100%}
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-family:'Malgun Gothic',Dotum,AppleGothic,sans-serif;font-size:12px}
+	img,fieldset{border:0}
+	ul,ol{list-style:none}
+	em,address{font-style:normal}
+	a{text-decoration:none}
+	a:hover,a:active,a:focus{text-decoration:underline}
+
+	/*자식 선택자를 확용해서 처리하면 좋다. (단, IE6 은 안됨)
+	.tab_list li.m1 > a {
+		color: red;
+	}*/	
+
+	/* style */
+	.wrap {
+		width: 960px;
+		margin: 0 auto;
+	}
+	.tab_list {
+		position: relative;
+		width: 500px;
+		/*margin: 30px 0; margin 을 주면 position 등에 의해 영역이 이상하게 잡히니 사용하려면 주의해서 사용해야 한다.*/
+	}
+	.tab_list li.m1,
+	.tab_list li.m2,
+	.tab_list li.m3 {
+
+	}
+	.tab_list li.m1 > a,
+	.tab_list li.m2 > a,
+	.tab_list li.m3 > a {
+		display: block;
+		float: left; /* 메인메뉴를 한줄로 표현하기 위해 사용 */
+		height: 35px;
+		padding: 0 30px;
+		border: 1px solid #aaa;
+		background-color: #eee;
+		color: #666;
+		font-size: 13px;
+		text-decoration: none; /* 메뉴에는 밑줄을 없앤다. */
+		line-height: 35px;
+	}
+	.tab_list li.m1.active > a,
+	.tab_list li.m2.active > a,
+	.tab_list li.m3.active > a {
+		position: relative;
+		z-index: 1; /* 선택된 메뉴는 앞으로 끄집어 내서 아래의 border 를 삭제 시킨다. */
+		background-color: #fff;
+		border-bottom-color: #fff;
+		color: #222;
+		font-weight: bold;
+	}
+	.tab_list li.m1 ul,
+	.tab_list li.m2 ul,
+	.tab_list li.m3 ul {
+		display: none; /* 하나만 보이게 하기위해 default 는 none 으로 처리 */
+		position: absolute; /* 위치를 메인메뉴 아래로 향하기 위해 사용 */
+		left: 0;
+		top: 36px; /* border 에 맞게 1px 더 설정 */
+		width: 100%; /* absolute 는 글자 있는공간까지만 차지하므로 100% 를 주어 끝까지 갈 수 있도록 만들었다. */
+		border-top: 1px solid #aaa; /* 메인메뉴와 서브메뉴를 잇는 border 를 긋는다. */
+		padding: 10px;
+	}
+	.tab_list li.m1 ul li,
+	.tab_list li.m2 ul li,
+	.tab_list li.m3 ul li {
+		margin-bottom: 6px; /* 간격조정 */
+		line-height: 1.5em;
+	}
+	.tab_list li.m1 ul li a,
+	.tab_list li.m2 ul li a,
+	.tab_list li.m3 ul li a { 
+		color: #666;
+	}
+	.tab_list li.m1.active ul,
+	.tab_list li.m2.active ul,
+	.tab_list li.m3.active ul {
+		display: block; /* active 된 것만 보여준다. */
+	}
+	.tab_list li.m1 .more,
+	.tab_list li.m2 .more,
+	.tab_list li.m3 .more{
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 12px;
+		line-height: 1.5;
+	}
+	.tab_list li.m1 .more a,
+	.tab_list li.m2 .more a,
+	.tab_list li.m3 .more a{
+		color: #666;
+		letter-spacing: -1px; /* 보통 더보기는 자간이 좁으므로 1px 만큼 좁힘 */
+	}
+	.tab_list li.m1.active .more,
+	.tab_list li.m2.active .more,
+	.tab_list li.m3.active .more{
+		display: block;
+	}
+
+	</style>
+</head>
+<body>
+
+<div class="wrap">	
+	<!-- UI Object -->
+	<div class="tab_list">
+		<ul>
+			<li class="m1 active"><a href="#"><span>공지사항</span></a>
+				<ul>
+					<li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a></li>
+					<li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a></li>
+					<li><a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a></li>
+				</ul>
+				<p class="more"><a href="#">공지사항 더보기</a></p>
+			</li>
+			<li class="m2"><a href="#"><span>보도자료</span></a>
+				<ul>
+					<li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a></li>
+					<li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a></li>
+					<li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a></li>
+					<li><a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a></li>
+				</ul>
+				<p class="more"><a href="#">보도자료 더보기</a></p>
+			</li>
+			<li class="m3"><a href="#"><span>해명자료</span></a>
+				<ul>
+					<li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a></li>
+					<li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a></li>
+					<li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a></li>
+					<li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a></li>
+					<li><a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a></li>
+				</ul>
+				<p class="more"><a href="#">해명자료 더보기</a></p>
+			</li>
+		</ul>
+	</div>
+	<!-- //UI Object -->
+</div>
+	
+</body>
+</html>

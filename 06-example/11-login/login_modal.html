@@ -1,0 +1,165 @@
+<!-- login modal 만들기 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<style>
+	/* reset */
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-family:'Malgun Gothic','돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
+	img,fieldset{border:0}
+	img{vertical-align:top}
+	ul,ol{list-style:none}
+	em,address{font-style:normal}
+	a{text-decoration:none}
+	a:hover,a:active,a:focus{text-decoration:underline}
+	legend, .blind{display:block;position:absolute;left:0;top:-9999em;overflow:hidden} /*legend 를 날림*/
+
+	/* style */
+	.login {
+		position: relative;
+		width: 384px;
+		margin: 0 auto;
+		border: 2px solid #555;
+	}
+	.login fieldset {
+		padding: 28px 28px 10px;
+	}
+	.login fieldset .field {
+		margin-bottom: 5px;
+	}
+	.login fieldset .field .inp_field {
+		width: 326px;
+		height: 28px;
+		border: 1px solid #b7b7b7;
+		border-color: #b7b7b7 #e1e1e1 #e1e1e1 #b7b7b7;
+		color: #767676;
+		font: bold 11px/28px verdana,sans-serif;
+		text-indent: 9px;
+
+		/* 아래는 font 에서 한번에 지정 가능하다.
+		font-family: verdana, sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		line-height: 28px;  브라우저에 따라 다를 수도 있으므로 height 를 주어야 하는 경우가 있다. */
+	}
+	.login fieldset .area {
+		padding-top: 5px;
+		*zoom: 1;
+	}
+	.login fieldset .area:after {
+		/* 묶어서 float 을 해지시킨다. */
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.login fieldset .chk_field {
+		float: left;
+		margin-top: 7px;
+		color: #767676;
+		font-size: 11px '돋움',dotum,helvetica,sans-serif;
+	}
+	.login fieldset .chk_field input {
+		vertical-align: middle; /* 수평에 가깝게 만들기 */
+	}
+	.login fieldset .btn_area {
+		float: right;
+		margin-right: 4px; /* span 에서 4px 만큼 집어넣었으므로 이를 같이 설정해야 오른쪽의 위치가 맞게 된다. */
+	}
+	.login fieldset .btn_area .btn_submit {
+		/* 버튼을 리셋 */
+		background: none;
+		border: 0 none;
+		cursor: pointer;
+		/* /////////// */
+		overflow: visible; /* IE 에서 hidden 처리 되어 있는거 같음... visible 로 하니 됨 */
+		padding-left: 40px;
+		background: url(img/btn_login.gif) no-repeat 0 0;
+		/* width 를 주지 않고 글자가 나오는데까지 img 를 넓힌다. */
+	}
+	.login fieldset .btn_area .btn_submit span {
+		display: block;
+		position: relative;
+		left: 4px; /* 위치를 4px 정도 옮겨서 깨지는걸 방지(하지만 이미지(예전에 쓰던 방식)라서 어쩔 수 없을수도.... IE 에서 잘 안되기도 함) */
+		height: 32px;
+		padding-right: 20px;
+		background: url(img/btn_login.gif) no-repeat 100% 0; /* 오른쪽 끝이 나오게 한다. */
+		color: #fff;
+		font-weight: bold;
+		line-height: 32px;
+	}
+	.login .nav {
+		padding: 14px 0;
+		background-color: #fafafa;
+		border-top: 1px solid #d9d9d9;
+		text-align: center; /* inline 후 center 지정하면 전체가 가운데로!! */
+	}
+	.login .nav li {
+		display: inline; /* li 를 inline 처리하여 한줄에 보이도록 했다. */
+		margin-right: 8px;
+		padding-right: 10px;
+		border-right: 1px solid #c3c3c3;
+	}
+	.login .nav li.last {
+		/* 마지막에는 특정 css 처리를 하지 않고 없앤다. */
+		margin-right: 0;
+		padding-right: 0;
+		border: 0;
+	}
+	.login .nav li a {
+		color: #767676;
+	}
+	.login .btn_close {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	.login .btn_close button {
+		width: 26px;
+		height: 26px;
+		background: none;
+		border: 0 none;
+		color: #cacaca;
+		font: bold 12px verdana,sans-serif;
+		text-align: center;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<div class="login">
+	<form action="#" method="post">
+		<fieldset>
+			<legend>로그인</legend>
+			<p class="field">
+				<label for="user_id" class="blind">ID</label>
+				<input type="text" id="user_id" name="user_id" value="" placeholder="ID" class="inp_field">
+			</p>
+			<p class="field">
+				<label for="user_pw" class="blind">PASSWORD</label>
+				<input type="password" id="user_pw" name="user_pw" value="" placeholder="PASSWORD" class="inp_field">
+			</p>
+			<div class="area">
+				<p class="chk_field">
+					<input type="checkbox" id="stay" name="stay" value="">
+					<label for="stay">로그인유지</label>
+				</p>
+				<p class="btn_area">
+					<button type="submit" class="btn_submit"><span>로그인</span></button>
+				</p>
+			</div>
+		</fieldset>
+		<div class="nav">
+			<ul>
+				<li><a href="#">아이디/비밀번호 찾기</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li class="last"><a href="#">Open ID</a></li>
+			</ul>
+		</div>
+	</form>
+	<p class="btn_close"><button type="button">X</button></p>
+</div>
+	
+</body>
+</html>

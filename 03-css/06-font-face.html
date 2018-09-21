@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>@font-face</title>
+	<style type="text/css">
+	/* 외부에서 폰트를 받아 사용하는데 url 을 통해서 가져올 수 있다. (적용하는 방법은 사이트에서 제공해주는 형식으로 사용한다. - 아래는 예시)
+		=> "web fonts" 검색
+		=> 한글은 "web fonts early access" 로 적용해서 가져온다.
+
+		font-family: 'Acme', sans-serif;
+		font-family: 'Exo', sans-serif;
+		font-family: 'Courgette', cursive;
+    	font-family: 'Noto Sans KR',sans-serif;
+	*/
+	/* 바로 아래의 natosanskr 은 한글폰트인데 다양한 글자 두께를 지원해서 좋다.(모바일에서 활용되면 좋다) , 
+	   주의할 점은 그냥 복사하면 http 가 존재하지 않으므로 적용시켜 주도록 한다.*/
+	@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+	@import url('https://fonts.googleapis.com/css?family=Acme|Courgette|Exo:200');
+
+	/* 폰트를 다운받아 적용할 때, 브라우저마다 확장자가 다르므로 각각 다운받아서 적용해야 문제가 안생길 수 있음에 주의해야 한다.
+		 (하지만 폰트를 다운받아 쓰는 것은 용량 문제도 있기 때문에 잘 사용하지 않고 web 폰트(구글폰트)를 쓰는 경우가 많다.)
+		- IE 							 : Embedded Open Type(eot) 
+		- Chrome, Firefox, Safari, Opera : True Type Font(ttf), Open Type Font(otf)
+		- mobileSafari					 : SVG Font(svg)
+	*/
+	@font-face {
+    	font-family: ngothic; /* 로딩한 파일의 이름을 정한다. */
+		        src: url(fonts/NanumGothic.eot); /* ie 에 적용하기 위해서 두가지로 나누게 된다. */
+		        src: url(fonts/NanumGothic.eot?#iefix) format('embedded-opentype'), /* 그 외 폰트는 각각 하나씩 검색하면서 적용할 수 있도록 설정한다. */
+		             url(fonts/NanumGothic.woff) format('woff'),
+		             url(fonts/NanumGothic.ttf) format('truetype')
+    }
+    .nanum {
+    	font-family: ngothic, sans-serif; /* 지정한 이름을 넣고, 어떤 체인지 지정해주도록 한다. */
+    }
+
+    h1 {
+		font-family: 'Courgette', cursive;
+    }
+    .lead {
+		font-family: 'Exo', sans-serif;
+		/*font-weight: 200px 이미 적용한 폰트를 가져왔으므로 이를 지정할 필요가 없다.*/ 
+    }
+    .lead2 {
+		font-family: 'Acme', sans-serif;
+    }
+
+    /* noto sans kr 체는 두께를 지원하므로 한번 확인해보자 */
+	.noto1 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 100;
+    }
+    .noto2 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 200;
+    }
+    .noto3 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 300;
+    }
+    .noto4 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 400;
+    }
+    .noto5 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 500;
+    }
+    .noto6 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 600;
+    }
+    .noto7 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 700;
+    }
+    .noto8 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 800;
+    }
+    .noto9 {
+    	font-family: 'Noto Sans KR',sans-serif;
+    	font-weight: 900;
+    }
+	</style>
+</head>
+<body>
+<h1>@font-face</h1>
+<p class="nanum">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cumque est dignissimos quasi, ad beatae repudiandae consequuntur minus inventore ducimus eius perferendis consectetur sit! Illo eaque hic repudiandae libero, ipsam temporibus molestiae facilis. Natus quisquam illum alias voluptates nisi voluptatum mollitia officia, nihil repellendus ratione tempora, tenetur repudiandae. Est, asperiores?</p>
+
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cumque est dignissimos quasi, ad beatae repudiandae consequuntur minus inventore ducimus eius perferendis consectetur sit! Illo eaque hic repudiandae libero, ipsam temporibus molestiae facilis. Natus quisquam illum alias voluptates nisi voluptatum mollitia officia, nihil repellendus ratione tempora, tenetur repudiandae. Est, asperiores?</p>
+
+
+<p class="lead2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cumque est dignissimos quasi, ad beatae repudiandae consequuntur minus inventore ducimus eius perferendis consectetur sit! Illo eaque hic repudiandae libero, ipsam temporibus molestiae facilis. Natus quisquam illum alias voluptates nisi voluptatum mollitia officia, nihil repellendus ratione tempora, tenetur repudiandae. Est, asperiores?</p>
+
+
+<p>문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다. 또한 상대가 될 '카운터파트'로는 김영남 최고인민회의 상임위원장이나 최태복 북한 최고인민회의 의장이 될 것으로 관측된다. 이해찬 더불어민주당 대표도 평양에서 10·4선언 기념식을 개최하고 이 자리에 여야 의원들이 함께 방북하는 방안을 추진 중이다.</p>
+<p class="nanum">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다. 또한 상대가 될 '카운터파트'로는 김영남 최고인민회의 상임위원장이나 최태복 북한 최고인민회의 의장이 될 것으로 관측된다. 이해찬 더불어민주당 대표도 평양에서 10·4선언 기념식을 개최하고 이 자리에 여야 의원들이 함께 방북하는 방안을 추진 중이다.</p>
+
+<p class="noto1">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+<p class="noto2">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+<p class="noto3">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+<p class="noto4">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+<p class="noto5">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+<p class="noto6">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+<p class="noto7">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+<p class="noto8">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+<p class="noto9">문 의장의 '남북 국회회담'이 추진된다면 구체적인 논의는 평양에서 열리는 3차 남북정상회담 이후에 논의될 것으로 보인다.</p>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>boxmodels</title>
+	<style type="text/css">
+	/* box models
+		크기지정: (content의 크기) width / height (따라서 border, padding 만큼 더 커질 수 있다.- 주의할 것)
+		테투리: border
+		안쪽 간격: padding
+		바깥쪽 간격: margin
+	 */
+
+	 /* *로 설정한 것은 모든 요소에 적용한다는 뜻(스타일의 초기화), 단 우선순위는 가장 낮다. */
+	 * {
+	 	margin: 0;
+	 	padding: 0;
+	 }
+
+	 .box {
+		width: 600px;
+		/*border: 5px solid black;
+		padding: 20px;*/
+		margin: 30px;
+		background-color: lime;
+	}
+
+	.box2 {
+		border: 5px solid black;
+		padding: 20px
+
+	}
+
+	.box3 {
+		/*css3 용으로 padding 이란 border 를 추가해도 지정한 width 보다는 커지지 않게 설정한다.
+			- IE8,7 등에 적용이 안되며, 모바일 페이지에 적용하는 것을 추천한다.*/
+		box-sizing: border-box; 
+	}
+	</style>
+</head>
+<body>
+	
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni natus repellendus incidunt quo? Voluptates maxime maiores omnis, vel, modi hic tenetur. Eligendi, nobis in. Atque, nihil non eaque in ducimus, eum ipsum vitae aliquid mollitia rerum laudantium illo ratione sapiente quasi. Fuga fugiat eos saepe, accusamus! Fugiat repudiandae adipisci, molestiae?
+</div>
+
+<!-- 두가지 클래스를 적용하는 것 -->
+<div class="box box2">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni natus repellendus incidunt quo? Voluptates maxime maiores omnis, vel, modi hic tenetur. Eligendi, nobis in. Atque, nihil non eaque in ducimus, eum ipsum vitae aliquid mollitia rerum laudantium illo ratione sapiente quasi. Fuga fugiat eos saepe, accusamus! Fugiat repudiandae adipisci, molestiae?
+</div>
+
+<div class="box box2 box3">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni natus repellendus incidunt quo? Voluptates maxime maiores omnis, vel, modi hic tenetur. Eligendi, nobis in. Atque, nihil non eaque in ducimus, eum ipsum vitae aliquid mollitia rerum laudantium illo ratione sapiente quasi. Fuga fugiat eos saepe, accusamus! Fugiat repudiandae adipisci, molestiae?
+</div>
+
+</body>
+</html>

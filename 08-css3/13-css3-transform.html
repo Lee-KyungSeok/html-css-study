@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>transform</title>
+	<style>
+	/* transform 종류
+		translate, translate3d
+		rotate, rotate3d
+		scale, scale3d
+		skew (모서리를 당긴 것처럼 설정됨)
+		matrix, matrix3d (몇가지 값을 한번에 적용할 때 사용 - 참고를 할 수 있는 사이트 이용 추천)
+		perspective (깊이를 표시)
+		perspective-origin (perspective 의 기준을 설정)
+		transform-origin (transform 의 기준을 설정)
+		transform-style (애니메이션되는 경우에도 3d 등의 모양을 유지)
+	*/
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html,body {
+		width: 100%;
+		height: 100%;
+	}
+	body {
+		perspective: 1000px; /* 깊이를 지정해준다. */
+		perspective-origin: 50% 50%; /* 깊이의 기준을 정한다. (여기서는 가운데가 설정됨) */
+		font: 12px 'Malgun Gothic',sans-serif;
+	}
+	#wrap {
+		width: 900px;
+		margin: 0 auto;
+	}
+	#wrap .pic {
+		width: 300px;
+	}
+	#wrap .pic img {
+		width: 100%;
+		transition: all 1s;
+		/* 원래는 가운데가 기준인데 0 0 (왼쪽 위) 으로 변경했다.
+			- 참고: 100% 0 : 오른쪽 위 / 100% 100% : 오른쪽 아래 */
+		transform-origin: 0 0;
+	}
+	#wrap .pic:hover img {
+		/* 원래는 여러 브라우저를 지원해야 한다. */
+		/* translate */
+		/*
+		-webkit-transform: translateX(200px);
+		-ms-transform: translateX(200px);
+		-o-transform: translateX(200px);
+		transform: translateX(200px);
+		*/
+		/*transform: translate(200px, 100px);*/
+		/*transform: translateZ(300px);  z 축으로 옮긴다- perspective 가 필요하다. */
+		/*transform: translate3d(300px,100px,300px);*/
+
+		/* rotate */
+		/*transform: rotate3d(1,1,1,90deg);  x,y,z 중 적용할 것(1 값) 정하고 각도를 정한다. */
+
+		/* scale */
+		/*transform: scale(1.5, 1.5);*/
+		/*transform: scaleZ(2) rotateY(90deg); Z(깊이) 를 늘리기 때문에 확인을 위해 rotate 를 이용*/
+
+		/* skew */
+		/*transform: skew(30deg, 15deg);  특정 각도만큼 x,y 로 당긴것처럼 표현된다. */
+
+		/* matrix 
+			- scaleX | skewY | skewX | scaleY | translateX | translateY
+		   matrix3d (인자가 16개)
+		*/
+		/*ransform: matrix(1.5,0,0.3,1.5,300,100);*/
+		transform: matrix3d(0.8068799999999998,-0.57,0.57,0,0.57,0.6723999999999999,0.57,0,-0.57,-0.57,0.6723999999999999,0,50,0,0,1);
+
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="pic"><img src="img/photo.jpg" alt=""></div>
+	</div>
+</body>
+</html>

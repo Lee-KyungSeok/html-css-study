@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>a</title>
+</head>
+<body>
+
+<h1>anchore</h1>
+
+<ul>
+	<li><a href="http://daum.net/">daum</a></li>
+	<li><a href="http://daum.net/" title="다음으로 이동">go daum</a></li> <!-- title 에서 보충 설명 가능 -->
+	<li><a href="http://daum.net/" target="_blank">새 탭(새 창)</a></li> <!-- _blank 를 target 으로 주면 새 탭을 띄우게 된다. -->
+	<li><a href="img/photo.jpg">포도이미지</a></li> <!-- 아마자로 이동시킬 수 있다. -->
+	<li><a href="img/photo.jpg" download>포도이미지</a></li> <!-- 모든 브라우저에는 적용이 안되었지만 download 속성을 넣으면 download 가 된다. -->
+	<li><a href="mailto:mymail@gmail.com">이메일주소@gmail.com</a></li> <!-- 메일 주소를 걸때는 mailto 를 이용할 수 있다. -->
+</ul>
+
+<!-- accesskey: alt + '지정한 키' 입력시(크롬) 주소로 이동한다.-->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, numquam! <a href="http://wah.or.kr" accesskey="w">웹접근성연구소</a></p>
+
+<!-- tabindex: tab을 누르면 움직이는데 이 순서를 지정할 수 있다.
+	a, input, button, select, textarea 는 이를 적용받는다. 
+	사실 이를 모두 적용하는 것보다는 특정한 부분만 적용하고 나머지는 html 태그에 맞춰서 적용시킨다.-->
+<ul>
+	<li><a href="https://google.com" tabindex="3">구글로 이동3</a></li>
+	<li><a href="https://google.com" tabindex="2">구글로 이동2</a></li>
+	<li><a href="https://google.com" tabindex="1">구글로 이동1</a></li>
+</ul>
+
+</body>
+</html>

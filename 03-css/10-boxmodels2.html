@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>boxmodels</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.box {
+		/* -left | -right | -bottom | -top 으로 방향에 따른 padding/margin/border 를 줄 수 있다.*/
+		/*margin-left: 20px;*/
+		/*border-bottom: 5px solid black;*/
+
+		/* margin 사용시 주의할 점은 두 box 사이에 마진은 큰 두 box top/bottom 의 마진 중에 큰 값으로 결정된다는 것이다.
+			즉, 두 값을 더한값이 마진이 아니라 큰 하나의 값이 두 box 사이의 마진값이 된다. */
+		margin: 20px;
+
+		padding: 20px;
+		/*padding: 100px 50px;  top bottom | right left 순서로 적용된다. */
+		/*padding: 100px 50px 10px;  top | right left | bottom */
+		/*padding: 100px 50px 10px 0;  top | right | bottom | left */
+
+		/*  <border 의 속성>
+			border-style : solid | dashed | dotted | double | inset | outset | ridge | groove 등 사용 가능하다. (solid, dashed, dotted 가 자주사용된다.)
+			아래 속성도 사용 가능하다.
+			border-color
+			border-width 
+			가 존재한다.
+		*/
+		border: 5px solid black;
+		border-style: solid double;
+		background-color: lime;
+
+		/* inline | block 을 이용해서 inline 태그 혹은 block 태그 처럼 만들 수 있다. 
+			- 참고: inline 형태는 box 형태로 잘 안되므로, inline 태그를 box 형태로 만들기 위해서는 block 으로 지정해준 후 스타일링 해줘야 한다.
+			- 참고2: width, height 같은 경우는 inline 으로 설정할 수 없다.
+		*/
+		/*display: block;*/
+
+		/* inline-block 을 지정하면 inline 과 block 의 특성을 모두 지닐수도 있다. */
+		display: inline-block;
+	}
+	</style>
+</head>
+<body>
+
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore cumque nostrum maxime, sequi optio quis placeat sit quia molestias quam aliquid, eum similique esse molestiae odit architecto necessitatibus fugiat dignissimos, rerum dolore sapiente. Fugit nulla repellat pariatur. Magnam similique dolorum et cum asperiores culpa perferendis excepturi fugit numquam amet.
+</div>
+
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore cumque nostrum maxime, sequi optio quis placeat sit quia molestias quam aliquid, eum similique esse molestiae odit architecto necessitatibus fugiat dignissimos, rerum dolore sapiente. Fugit nulla repellat pariatur. Magnam similique dolorum et cum asperiores culpa perferendis excepturi fugit numquam amet.
+</div>
+
+<div class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore cumque nostrum maxime, sequi optio quis placeat sit quia molestias quam aliquid, eum similique esse molestiae odit architecto necessitatibus fugiat dignissimos, rerum dolore sapiente. Fugit nulla repellat pariatur. Magnam similique dolorum et cum asperiores culpa perferendis excepturi fugit numquam amet.
+</div>
+
+<span class="box">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus fugit iste fuga magnam magni ad modi mollitia explicabo aperiam adipisci pariatur optio quo earum, alias provident. Magnam quasi, saepe. Consequatur eius, molestiae, sequi facilis voluptatem consectetur, dicta voluptas nihil inventore repellat animi amet quae! Explicabo, modi. Odio temporibus velit nemo?
+</span>
+	
+</body>
+</html>

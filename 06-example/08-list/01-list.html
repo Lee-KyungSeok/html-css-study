@@ -1,0 +1,134 @@
+<!-- 이미지 하단에 텍스트가 있는 목록 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>list</title>
+	<style>
+	/* reset */
+	html,body{width:100%;height:100%}
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+	body,input,textarea,select,button,table{font-family:'Malgun Gothic',Dotum,AppleGothic,sans-serif;font-size:12px}
+	img,fieldset{border:0}
+	img{vertical-align:top}
+	ul,ol{list-style:none}
+	em,address{font-style:normal}
+	a{text-decoration:none}
+	a:hover,a:active,a:focus{text-decoration:underline}
+
+	/* style */
+	.list_type {
+		width: 400px;
+		border: 1px solid #888;
+		margin: 0 auto;
+		padding: 5px; /* padding 이나 width 를 쓸때 한번 감싸서 사용하는 것이 더 좋다. */
+		*zoom: 1;
+	}
+	.list_type:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.list_type li {
+		float: left;
+		width: 90px;
+		margin: 5px;
+	}
+	.list_type li a {
+		display: block;
+		color: #fff;
+	}
+	.list_type li a .thumb {
+		display: block;
+	}
+	.list_type li a em {
+		display: block;
+		padding: 5px 0;
+		background-color: #888;
+		font-size: 11px;
+		text-align: center;
+		letter-spacing: -1px;
+		line-height: 1.5;
+	}
+
+	</style>
+</head>
+<body>
+<!-- UI Object -->
+<ul class="list_type">
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="thumb"><img src="img/thkim.gif" width="90" height="90" alt=""></span>
+			<em>하단에 텍스가있는 이미지리스트입니다.</em>
+		</a>
+	</li>
+</ul>
+<!-- //UI Object -->
+</body>
+</html>

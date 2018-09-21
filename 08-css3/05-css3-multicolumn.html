@@ -1,0 +1,51 @@
+<!-- multi column -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>multi columns</title>
+	<style>
+	/*
+		멀티 칼럼을 이용하면 float 을 이용하지 않더라도 원하는 갯수로 나눌 수 있는 장점이 있다.
+	*/
+	body {
+		font: 12px 'Malgun Gothic',sans-serif;
+	}
+	#wrap {
+		width: 80%;
+		margin: 0 auto;
+		/* 칼럼 나누기 */
+		/* 칼럼을 몇개로 나눌 것인가? */
+		column-count: 3;
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		/* 칼럼을 몇개로 띄울 것인가? */
+		column-gap: 20px;
+		/* 칼럼의 라인을 지정한다. */
+		column-rule: 1px dashed #aaa;
+		/* 칼럼의 너비를 지정 
+			- 여유 틈에 따라 갯수가 지정된다.
+			- 갯수를 변화시킨다.*/
+		/*column-width: 300px;*/
+
+		/* columns 로 지정 가능
+			- 크기(width) | 갯수
+			- 확인해보면 moz 와 webkit 을 지정해 주어야 한다.
+			- count 가 아니라 width 에 따라 갯수가 달라지지만 count 를 벗어나지 않는다. */
+		/*columns: 300px 3;*/
+	}
+	#wrap h1 {
+		/* 전체로 지정하고 싶을때 설정
+			- 이러면 아래에서는 제목은 전체가 되고 아래부터 칼럼으로 지정이 된다. */
+		column-span: all;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>multi columns</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolorum, dolorem officiis pariatur dolores nihil odit temporibus. Minima adipisci odio consequatur suscipit repellendus atque, magnam, quod ab fugiat laudantium dolorum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facere laboriosam quas delectus harum odio totam non dicta ullam aliquid mollitia, ipsa velit id nemo officia accusamus, fugit voluptate repudiandae architecto veritatis. Sapiente quisquam optio, officiis sunt nulla blanditiis aperiam exercitationem earum reiciendis quibusdam ex at id neque vero quas ut, omnis illo facere. Ea nostrum temporibus porro at quis pariatur aliquam fuga, rem maxime et iste non, aliquid magni minima iusto enim, ducimus quidem tempore beatae qui nam odit mollitia, nisi exercitationem! Quibusdam veritatis explicabo alias, expedita, sunt aspernatur. In totam itaque aperiam aliquid ipsam explicabo, dolorem tenetur illum.</p>
+	</div>
+</body>
+</html>

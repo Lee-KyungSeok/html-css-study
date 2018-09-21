@@ -1,0 +1,44 @@
+<!-- 투명도 지정하기 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>opacity</title>
+	<style>
+	body {
+		background: url(img/photo.jpg);
+	}
+	#wrap {
+		width: 600px;
+		padding: 20px;
+		margin: 0 auto;
+		font: 12px arial,sans-serif;
+	}
+	/* 투명도 - 배경을 투명하게 / 요소를 투명하게 */
+	#wrap h1.sample1 {
+		border: 1px solid black;
+		color: #f00;
+		font-size: 100px;
+		/* rgba 로 배경색에 투명도 지정 */
+		background-color: rgba(0,0,0,.5);
+		/* hsla 로 배경색에 투명도 지정 (잘은 쓰지 않는다.)
+			- hsla 는 "색상 | 채도 | 밝기(기본값이 50%) | 투명도" 지정*/
+		/*background-color: hsla(0,100%,50%,1);*/
+	}
+	#wrap h1.sample2 {
+		/* opacity 속성을 이용해 투명도 넣기 (전체 태그가 투명하게 된다.(배경+글자)) */
+		opacity: .4;
+		border: 1px solid black;
+		color: #f00;
+		font-size: 100px;
+		background-color: blue;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1 class="sample1">Opacity1</h1>
+		<h1 class="sample2">Opacity2</h1>
+	</div>
+</body>
+</html>

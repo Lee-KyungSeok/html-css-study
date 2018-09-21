@@ -1,0 +1,41 @@
+<!-- 추가된 배경 처리 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>background</title>
+	<style>
+	body {
+		font: 12px 'Malgun Gothic',sans-serif;
+	}
+	.box {
+		width: 400px;
+		padding: 20px;
+		border: 3px solid black;
+		color: white;
+		/* 이어서 쓰는 경우 먼저쓴게 앞쪽으로, 뒤에쓴게 뒷쪽으로 나온다. 
+			- 이미지만 가지고 배치시킬 수 있다는 큰 장점이 존재(모서리에 넣고 싶은 경우 이전에는 div 네개를 지정, 현재는 쉼표로 넣기만 하면 됨)*/
+		/* / 뒤에 이미지의 크기를 선택할 수 있다. */
+		background: 
+			url(img/twt.png) no-repeat 50px 30px,
+			/*url(img/insta.png) no-repeat 55px 35px / 100% 64px;*/
+			url(img/insta.png) no-repeat 55px 35px,
+			/*url(img/photo.jpg) no-repeat 0 0 / 100% auto; 높이를 채운채로 사용 가능하다.*/
+			url(img/photo.jpg) no-repeat 0 0 / cover; /* cover 하면 한쪽을 auto 로 설정해준다. */
+
+		/* padding 부분에 그림이 보이지 않도록 한다.(content-box 설정시) */
+		background-clip: content-box;
+		
+		/* 배경의 기준점을 잡아준다.(즉, content 역역을 기준으로 그림을 표현한다.) */
+		background-origin: content-box;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="box">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, itaque quod voluptatem. Perspiciatis sint beatae molestiae ab cum, adipisci, doloremque eligendi dolor quam maxime. Ullam incidunt, vitae harum provident esse, distinctio est error quod eum, minus non blanditiis earum accusamus similique aut soluta autem nesciunt rem beatae voluptates hic? Quia harum praesentium est dolorum minus totam quos cum non placeat cupiditate excepturi ex nesciunt nam porro explicabo debitis, et tempora quibusdam molestias vel impedit, delectus in? Doloribus dolore odit a voluptas pariatur ad ab deleniti ipsa? Voluptates tenetur, vel cupiditate. Dolore iste, culpa sint provident molestias nemo eveniet, id ullam.
+		</div>
+	</div>
+</body>
+</html>

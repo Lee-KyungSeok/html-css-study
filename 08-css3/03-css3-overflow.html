@@ -1,0 +1,38 @@
+<!-- 말줄임표 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>text-overflow</title>
+	<style>
+	#wrap {
+		width: 600px;
+		padding: 20px;
+		margin: 0 auto;
+		border: 1px solid black;
+		border-width: 0 1px;
+		font: 12px arial,sans-serif;
+	}
+	.sample {
+		/* 말줄임을 하려면
+			- (inline 요소일 경우)0. block 요소로 바꾸기
+			- 1. 크기를 지정
+			- 2. 줄바꿈이 안되게 설정
+			- 3. 넘치는 부분 숨기기
+			- 4. 넘치는 텍스트를 ellipsis 로 설정
+		*/
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		white-space: nowrap; /* 줄바꿈이 안되게 설정 */
+		text-overflow: ellipsis;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<p class="sample">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, voluptatibus saepe reiciendis, exercitationem debitis architecto libero similique molestias, ipsum sed a amet quia est quasi. Hic ullam quibusdam sint ducimus aliquid mollitia reiciendis a consectetur minus, ab provident laborum enim.</p>
+		<span class="sample">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum vero explicabo, cum odio amet, accusamus, incidunt quaerat quo culpa optio nam doloribus at deleniti quia hic atque ullam voluptatibus suscipit, voluptate nisi qui nesciunt unde praesentium aliquid sequi. Aspernatur laudantium veritatis ratione deserunt eveniet dicta minus repellat quidem reprehenderit quas.</span>
+	</div>
+</body>
+</html>
